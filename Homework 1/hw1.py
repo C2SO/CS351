@@ -63,11 +63,13 @@ def digital_sum(nums_list):
 
 
 def count_collatz_steps(n):
-    """ (int) -> int
-
-    Return the number of steps it takes to reach 1, by applying the two steps
-    of the Collatz conjecture beginning from n.
-
-    >>> count_collatz_steps(6)
-    8
-    """
+    # n = int(input("Input a number >>> "))
+    totalSteps = 0
+    while n != 1:
+        if (n % 2 == 0):
+            n = n/2
+            totalSteps += 1
+        else:
+            n = (3*n)+1
+            totalSteps += 1
+    print(totalSteps)
