@@ -1,5 +1,6 @@
 #CS351 -- HW1
-#Nicholas Rahbany
+# Nicholas Rahbany
+
 
 def greatest_difference(nums1, nums2):
     maxlength = 0
@@ -24,7 +25,7 @@ def can_pay_with_two_coins(denoms, amount):
     finalAmount = amount
     finalResult = False
     index = 3
-    while index >= 0: 
+    while index >= 0:
         if finalResult == False:
             finalAmount = finalAmount - int(denoms[index])
             newIndex = index
@@ -40,45 +41,42 @@ def can_pay_with_two_coins(denoms, amount):
         else:
             break
     print(finalResult)
-	
-	
-def all_fluffy(s):
-    """ (str) -> bool
 
-    Return True iff every letter in s is fluffy. Fluffy letters are those that
-    appear in the word 'fluffy'.
-    
-    >>> all_fluffy('fullfly')
-    True
-    >>> all_fluffy('firefly')
-    False
-    """
+
+def all_fluffy(s):
+    # input = input("What string you like to check? >>> ")
+    finalResult = True
+    for index, val in enumerate(input):
+        if finalResult == True:
+            if val in "fluffy":
+                pass
+            else:
+                finalResult = False
+        else:
+            break
+    print(finalResult)
 
 
 def digital_sum(nums_list):
     """ (list of str) -> int
-    
+
     Precondition: s.isdigit() holds for each string s in nums_list.
-    
+
     Return the sum of all the digits in all strings in nums_list.
-    
+
     >>> digital_sum(['64', '128', '256'])
     34
     >>> digital_sum(['12', '3'])
     6
     """
-    
 
 
 def count_collatz_steps(n):
     """ (int) -> int
-    
+
     Return the number of steps it takes to reach 1, by applying the two steps
     of the Collatz conjecture beginning from n.
 
     >>> count_collatz_steps(6)
     8
     """
-
-    
-    

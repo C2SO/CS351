@@ -1,11 +1,12 @@
-def all_fluffy(s):
-    """ (str) -> bool
-
-    Return True iff every letter in s is fluffy. Fluffy letters are those that
-    appear in the word 'fluffy'.
-    
-    >>> all_fluffy('fullfly')
-    True
-    >>> all_fluffy('firefly')
-    False
-    """
+# def all_fluffy(s):
+input = input("What string you like to check? >>> ")
+finalResult = True
+for index, val in enumerate(input):
+    if finalResult == True:
+        if val in "fluffy":
+            pass
+        else:
+            finalResult = False
+    else:
+        break
+print(finalResult)
