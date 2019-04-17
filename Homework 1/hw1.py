@@ -58,17 +58,8 @@ def all_fluffy(s):
 
 
 def digital_sum(nums_list):
-    """ (list of str) -> int
-
-    Precondition: s.isdigit() holds for each string s in nums_list.
-
-    Return the sum of all the digits in all strings in nums_list.
-
-    >>> digital_sum(['64', '128', '256'])
-    34
-    >>> digital_sum(['12', '3'])
-    6
-    """
+    # nums_list = input("What string you like to check? >>> ")
+    print(sum(int(x) for x in nums_list if x.isdigit()))
 
 
 def count_collatz_steps(n):
