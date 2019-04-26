@@ -1,63 +1,59 @@
+#run by typing "python36 file-server.py"
+
 import sys, socket
 
 C_DEBUG = False
 
 print("Initializing")
 
-sck = socket.socket()
+skt = socket.socket()
 host = socket.gethostname()
 port = 36650
-sck.bind((host, port))
+skt.bind((host, port))
 
 print("Listening...")
 
-sck.listen(5)
+skt.listen(5)
 
 while True:   
-    conn, addr = sck.accept()
+    conn, addr = skt.accept()
     
     print("Accepting connection from ", addr)
 
     data = conn.recv(1024).decode('utf-8')
     
-    print(data)
+    if C_DEBUG:
+        print(data)
 
     # Parse the message to count the number of characters, words, and spaces
     numberOfChars = 0
     numberOfWords = 0
     numberOfLines = 0
-    lastCharWasWhitespace = False
+    lastCharWhitespace = False
 
     for c in data :
 
         numberOfChars = numberOfChars + 1
         if c == ' ' :
-            if not lastCharWasWhitespace:
+            if not lastCharWhitespace:
                 numberOfWords = numberOfWords + 1
-                #print(lastChar)
-            lastCharWasWhitespace = True
+            lastCharWhitespace = True
         elif c == '\n' :
             numberOfLines = numberOfLines + 1
-            if not lastCharWasWhitespace:
+            if not lastCharWhitespace:
                 numberOfWords = numberOfWords + 1
-                #print(lastChar)
-            lastCharWasWhitespace = True
+            lastCharWhitespace = True
         else:
-            lastCharWasWhitespace = False
+            lastCharWhitespace = False
 
         lastChar = c
 
 
-    processedInput = "Number of characters: %d\nNumber of words: %d\nNumber of lines: %d" \
+    output = "Number of characters: %d\nNumber of words: %d\nNumber of lines: %d" \
         % (numberOfChars, numberOfWords, numberOfLines)
     
-    if C_DEBUG:
-        print(processedInput)
+    print(output)
 
-    # Return the business to the client
-    conn.send(processedInput.encode())
+    conn.send(output.encode())
 
-    if C_DEBUG:
-        print()
-
-sck.close()
+skt.close()

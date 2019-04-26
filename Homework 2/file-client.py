@@ -1,3 +1,5 @@
+# run by typing "python36 file-client.py {ip address} {text file}"
+
 import sys, socket
 
 try:
@@ -14,7 +16,7 @@ except FileNotFoundError:
 
 dataToSend = dataFile.read().encode()
 
-sck = socket.socket()
+skt = socket.socket()
 host = str(sys.argv[1])
 
 if host == 'localhost': # resolve localhost to the name of localhost
@@ -23,21 +25,21 @@ if host == 'localhost': # resolve localhost to the name of localhost
 port = 36650
 
 try:
-    sck.connect((host, port))
+    skt.connect((host, port))
 except socket.gaierror:
     print('ERROR: Invalid host')
-    sck.close()
+    skt.close()
     quit()
 except ConnectionRefusedError:
     print('ERROR: Connection was refused!  Is the server running?  Is the host-name correct?')
-    sck.close()
+    skt.close()
     quit()
 else:
-    sck.send(dataToSend)
-    recievedStuff = sck.recv(1024).decode('utf-8')
+    skt.send(dataToSend)
+    recievedData = skt.recv(1024).decode('utf-8')
     
-    print(recievedStuff)
+    print(recievedData)
 
-    sck.close()
+    skt.close()
 
     dataFile.close()
