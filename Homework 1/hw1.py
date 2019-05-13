@@ -44,9 +44,9 @@ def can_pay_with_two_coins(denoms, amount):
 
 
 def all_fluffy(s):
-    # input = input("What string you like to check? >>> ")
+    # s = input("What string you like to check? >>> ")
     finalResult = True
-    for index, val in enumerate(input):
+    for index, val in enumerate(s):
         if finalResult == True:
             if val in "fluffy":
                 pass

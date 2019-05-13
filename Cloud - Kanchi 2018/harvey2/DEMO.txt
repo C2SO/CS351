@@ -1,0 +1,546 @@
+# Author: Daniel Harvey
+
+-----------------------------------
+OUTPUT FOR: ch9Strings:
+./ch9Strings.py 
+Enter some text: Hello my 5 firend are 22 years old, and there are 19.6 of them
+"Hello my 5 firend are 22 years old, and there are 19.6 of them", The sum of the numbers is 46.
+-----------------------------------
+OUTPUT FOR hangman, losing game:
+I have picked a word.  Please guess letters of the word.  You will have 6 incorrect tries allowed.
+
+Current Guess: - - - -
+Used Letters: 
+Number of tries left: 6
+
+Guess a letter or the whole word: a
+Sorry no a.
+
+Current Guess: - - - -
+Used Letters: a
+Number of tries left: 5
+
+Guess a letter or the whole word: a
+Sorry no a.
+
+Current Guess: - - - -
+Used Letters: a a
+Number of tries left: 4
+
+Guess a letter or the whole word: a
+Sorry no a.
+
+Current Guess: - - - -
+Used Letters: a a a
+Number of tries left: 3
+
+Guess a letter or the whole word: a
+Sorry no a.
+
+Current Guess: - - - -
+Used Letters: a a a a
+Number of tries left: 2
+
+Guess a letter or the whole word: a
+Sorry no a.
+
+Current Guess: - - - -
+Used Letters: a a a a a
+Number of tries left: 1
+
+Guess a letter or the whole word: a
+Sorry no a.
+
+The correct word was dell.
+
+
+Better luck next time.
+Your current score is 200 points.
+
+I have picked a word.  Please guess letters of the word.  You will have 6 incorrect tries allowed.
+
+Current Guess: - - - - - -
+Used Letters: 
+Number of tries left: 6
+
+Guess a letter or the whole word: z
+Sorry no z.
+
+Current Guess: - - - - - -
+Used Letters: z
+Number of tries left: 5
+
+Guess a letter or the whole word: x
+Sorry no x.
+
+Current Guess: - - - - - -
+Used Letters: z x
+Number of tries left: 4
+
+Guess a letter or the whole word: c
+Sorry no c.
+
+Current Guess: - - - - - -
+Used Letters: z x c
+Number of tries left: 3
+
+Guess a letter or the whole word: v
+Yes there is a v.
+
+Current Guess: - - - - v -
+Used Letters: z x c v
+Number of tries left: 2
+
+Guess a letter or the whole word: b
+Sorry no b.
+
+Current Guess: - - - - v -
+Used Letters: z x c v b
+Number of tries left: 1
+
+Guess a letter or the whole word: n
+Yes there is a n.
+
+The correct word was lenovo.
+
+
+Better luck next time.
+Your current score is -79 points.
+
+You lose!
+------
+OUTPUT FOR winning game:
+------
+I have picked a word.  Please guess letters of the word.  You will have 6 incorrect tries allowed.
+
+Current Guess: - - - - - - - - -
+Used Letters: 
+Number of tries left: 6
+
+Guess a letter or the whole word: m
+Sorry no m.
+
+Current Guess: - - - - - - - - -
+Used Letters: m
+Number of tries left: 5
+
+Guess a letter or the whole word: p
+Yes there is a p.
+
+Current Guess: p - - - - - - - -
+Used Letters: m p
+Number of tries left: 4
+
+Guess a letter or the whole word: processor
+You guessed the word!
+
+Congratulations!  You win this round.
+Your current score is 879 points.
+
+I have picked a word.  Please guess letters of the word.  You will have 6 incorrect tries allowed.
+
+Current Guess: - - - -
+Used Letters: 
+Number of tries left: 6
+
+Guess a letter or the whole word: d	
+Sorry no d.
+
+Current Guess: - - - -
+Used Letters: d
+Number of tries left: 5
+
+Guess a letter or the whole word: m
+Yes there is a m.
+
+Current Guess: m - - -
+Used Letters: d m
+Number of tries left: 4
+
+Guess a letter or the whole word: mini
+You guessed the word!
+
+Congratulations!  You win this round.
+Your current score is 1058 points.
+
+You win!
+---------
+OUTPUT FOR tie game, run out of words before score is min or max:
+---------
+I have picked a word.  Please guess letters of the word.  You will have 6 incorrect tries allowed.
+
+Current Guess: - - - - -
+Used Letters: 
+Number of tries left: 6
+
+Guess a letter or the whole word: c
+Yes there is a c.
+
+Current Guess: c - c - -
+Used Letters: c
+Number of tries left: 5
+
+Guess a letter or the whole word: cache
+You guessed the word!
+
+Congratulations!  You win this round.
+Your current score is 674 points.
+
+I have picked a word.  Please guess letters of the word.  You will have 6 incorrect tries allowed.
+
+Current Guess: - - - -
+Used Letters: 
+Number of tries left: 6
+
+Guess a letter or the whole word: f
+Sorry no f.
+
+Current Guess: - - - -
+Used Letters: f
+Number of tries left: 5
+
+Guess a letter or the whole word: a
+Sorry no a.
+
+Current Guess: - - - -
+Used Letters: f a
+Number of tries left: 4
+
+Guess a letter or the whole word: v
+Sorry no v.
+
+Current Guess: - - - -
+Used Letters: f a v
+Number of tries left: 3
+
+Guess a letter or the whole word: e
+Sorry no e.
+
+Current Guess: - - - -
+Used Letters: f a v e
+Number of tries left: 2
+
+Guess a letter or the whole word: g
+Sorry no g.
+
+Current Guess: - - - -
+Used Letters: f a v e g
+Number of tries left: 1
+
+Guess a letter or the whole word: n
+Yes there is a n.
+
+The correct word was mini.
+
+
+Better luck next time.
+Your current score is 495 points.
+
+I have picked a word.  Please guess letters of the word.  You will have 6 incorrect tries allowed.
+
+Current Guess: - - - -
+Used Letters: 
+Number of tries left: 6
+
+Guess a letter or the whole word: c
+Sorry no c.
+
+Current Guess: - - - -
+Used Letters: c
+Number of tries left: 5
+
+Guess a letter or the whole word: m
+Sorry no m.
+
+Current Guess: - - - -
+Used Letters: c m
+Number of tries left: 4
+
+Guess a letter or the whole word: d
+Yes there is a d.
+
+Current Guess: d - - -
+Used Letters: c m d
+Number of tries left: 3
+
+Guess a letter or the whole word: e
+Yes there is a e.
+
+Current Guess: d e - -
+Used Letters: c m d e
+Number of tries left: 2
+
+Guess a letter or the whole word: l
+Yes there is a l.
+
+The correct word was dell.
+
+
+Congratulations!  You win this round.
+Your current score is 795 points.
+
+I have picked a word.  Please guess letters of the word.  You will have 6 incorrect tries allowed.
+
+Current Guess: - - - - - - - - -
+Used Letters: 
+Number of tries left: 6
+
+Guess a letter or the whole word: z
+Sorry no z.
+
+Current Guess: - - - - - - - - -
+Used Letters: z
+Number of tries left: 5
+
+Guess a letter or the whole word: x
+Sorry no x.
+
+Current Guess: - - - - - - - - -
+Used Letters: z x
+Number of tries left: 4
+
+Guess a letter or the whole word: w
+Sorry no w.
+
+Current Guess: - - - - - - - - -
+Used Letters: z x w
+Number of tries left: 3
+
+Guess a letter or the whole word: q
+Sorry no q.
+
+Current Guess: - - - - - - - - -
+Used Letters: z x w q
+Number of tries left: 2
+
+Guess a letter or the whole word: u
+Sorry no u.
+
+Current Guess: - - - - - - - - -
+Used Letters: z x w q u
+Number of tries left: 1
+
+Guess a letter or the whole word: b
+Sorry no b.
+
+The correct word was processor.
+
+
+Better luck next time.
+Your current score is 416 points.
+
+I have picked a word.  Please guess letters of the word.  You will have 6 incorrect tries allowed.
+
+Current Guess: - - - - - - - - - - -
+Used Letters: 
+Number of tries left: 6
+
+Guess a letter or the whole word: z
+Sorry no z.
+
+Current Guess: - - - - - - - - - - -
+Used Letters: z
+Number of tries left: 5
+
+Guess a letter or the whole word: x
+Sorry no x.
+
+Current Guess: - - - - - - - - - - -
+Used Letters: z x
+Number of tries left: 4
+
+Guess a letter or the whole word: q
+Sorry no q.
+
+Current Guess: - - - - - - - - - - -
+Used Letters: z x q
+Number of tries left: 3
+
+Guess a letter or the whole word: w
+Sorry no w.
+
+Current Guess: - - - - - - - - - - -
+Used Letters: z x q w
+Number of tries left: 2
+
+Guess a letter or the whole word: u
+Sorry no u.
+
+Current Guess: - - - - - - - - - - -
+Used Letters: z x q w u
+Number of tries left: 1
+
+Guess a letter or the whole word: v
+Sorry no v.
+
+The correct word was motherboard.
+
+
+Better luck next time.
+Your current score is 136 points.
+
+I have picked a word.  Please guess letters of the word.  You will have 6 incorrect tries allowed.
+
+Current Guess: - - - - - -
+Used Letters: 
+Number of tries left: 6
+
+Guess a letter or the whole word: l
+Sorry no l.
+
+Current Guess: - - - - - -
+Used Letters: l
+Number of tries left: 5
+
+Guess a letter or the whole word: m
+Yes there is a m.
+
+Current Guess: m - m - - -
+Used Letters: l m
+Number of tries left: 4
+
+Guess a letter or the whole word: memory
+You guessed the word!
+
+Congratulations!  You win this round.
+Your current score is 435 points.
+
+I have picked a word.  Please guess letters of the word.  You will have 6 incorrect tries allowed.
+
+Current Guess: - - - - - -
+Used Letters: 
+Number of tries left: 6
+
+Guess a letter or the whole word: laptop
+You guessed the word!
+
+Congratulations!  You win this round.
+Your current score is 834 points.
+
+I have picked a word.  Please guess letters of the word.  You will have 6 incorrect tries allowed.
+
+Current Guess: - - - - - -
+Used Letters: 
+Number of tries left: 6
+
+Guess a letter or the whole word: z
+Sorry no z.
+
+Current Guess: - - - - - -
+Used Letters: z
+Number of tries left: 5
+
+Guess a letter or the whole word: x
+Sorry no x.
+
+Current Guess: - - - - - -
+Used Letters: z x
+Number of tries left: 4
+
+Guess a letter or the whole word: w
+Sorry no w.
+
+Current Guess: - - - - - -
+Used Letters: z x w
+Number of tries left: 3
+
+Guess a letter or the whole word: q
+Sorry no q.
+
+Current Guess: - - - - - -
+Used Letters: z x w q
+Number of tries left: 2
+
+Guess a letter or the whole word: u
+Sorry no u.
+
+Current Guess: - - - - - -
+Used Letters: z x w q u
+Number of tries left: 1
+
+Guess a letter or the whole word: v
+Yes there is a v.
+
+The correct word was lenovo.
+
+
+Better luck next time.
+Your current score is 555 points.
+
+I have picked a word.  Please guess letters of the word.  You will have 6 incorrect tries allowed.
+
+Current Guess: - - - - - - - -
+Used Letters: 
+Number of tries left: 6
+
+Guess a letter or the whole word: z
+Sorry no z.
+
+Current Guess: - - - - - - - -
+Used Letters: z
+Number of tries left: 5
+
+Guess a letter or the whole word: x
+Sorry no x.
+
+Current Guess: - - - - - - - -
+Used Letters: z x
+Number of tries left: 4
+
+Guess a letter or the whole word: w
+Sorry no w.
+
+Current Guess: - - - - - - - -
+Used Letters: z x w
+Number of tries left: 3
+
+Guess a letter or the whole word: q
+Sorry no q.
+
+Current Guess: - - - - - - - -
+Used Letters: z x w q
+Number of tries left: 2
+
+Guess a letter or the whole word: u
+Sorry no u.
+
+Current Guess: - - - - - - - -
+Used Letters: z x w q u
+Number of tries left: 1
+
+Guess a letter or the whole word: v
+Sorry no v.
+
+The correct word was keyboard.
+
+
+Better luck next time.
+Your current score is 516 points.
+
+
+No words left to play. Your final score is 516
+--------------------------------------------------
+OUTPUT FOR Shapes, inputs given in assignment 2 sheet:
+Triangle with sides 2.0 3.0 4.0: Area = 2
+Rectangle with sides 3.0 4.0: Area = 12
+Triangle with sides 4.0 5.0 6.0: Area = 9
+Rectangle with sides 5.0 6.0: Area = 30
+Triangle with sides 2.0 4.0 3.0: Area = 2
+Rectangle with sides 4.0 9.0: Area = 36
+Rectangle with sides 6.0 7.0: Area = 42
+--------------------------------------------------
+OUTPUT FOR RPC, inputs given in assignment sheet, run locally for simplicity (network demo screenshot in folder):
+
+Server:
+127.0.0.1 - - [02/May/2018 21:21:33] "POST /RPC2 HTTP/1.1" 200 -
+127.0.0.1 - - [02/May/2018 21:21:33] "POST /RPC2 HTTP/1.1" 200 -
+127.0.0.1 - - [02/May/2018 21:21:33] "POST /RPC2 HTTP/1.1" 200 -
+127.0.0.1 - - [02/May/2018 21:21:33] "POST /RPC2 HTTP/1.1" 200 -
+
+Client:
+9232039843266182684265088246
+19386100467722630947609715673960829950536921632
+90561912
+1804696
+
+

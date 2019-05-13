@@ -1,0 +1,215 @@
+# Author: Daniel Harvey
+
+-------------------------------------------
+Output for Chat Room:
+
+Client 1:
+
+Connected to remote host. You can start sending messages
+[Me] [127.0.0.1:49338] entered our chatting room
+[Me] Sending a message
+[('127.0.0.1', 49338)] Sending a response
+[('127.0.0.1', 49338)] Hello
+[Me] How are you?
+[('127.0.0.1', 49338)] I'm doing very well
+[Me] Have you seen the new Avengers movie?
+[('127.0.0.1', 49338)] No I haven't, was it good?
+[Me] No
+[('127.0.0.1', 49338)] Okay goodbye
+[Me] See you later
+[Me] Client (127.0.0.1, 49338) is offline
+
+
+Client 2:
+Connected to remote host. You can start sending messages
+[('127.0.0.1', 49334)] Sending a message
+[Me] Sending a response
+[Me] Hello
+[('127.0.0.1', 49334)] How are you?
+[Me] I'm doing very well
+[('127.0.0.1', 49334)] Have you seen the new Avengers movie?
+[Me] No I haven't, was it good?
+[('127.0.0.1', 49334)] No
+[Me] Okay goodbye
+[('127.0.0.1', 49334)] See you later
+
+---------------------------------------------
+
+Output for Tic Tac Toe:
+
+**********
+Player 1:
+**********
+
+Connected to remote host. You can start sending messages
+[127.0.0.1:49360] entered our game, joining X team
+[127.0.0.1:49364] entered our game, joining O team
+[Me] (5,5)
+X Team has placed their piece, O Team's turn now.
+ COL 
+  9   -  -  -  -  -  -  -  -  - 
+  8   -  -  -  -  -  -  -  -  - 
+  7   -  -  -  -  -  -  -  -  - 
+  6   -  -  -  -  -  -  -  -  - 
+  5   -  -  -  -  X  -  -  -  - 
+  4   -  -  -  -  -  -  -  -  - 
+  3   -  -  -  -  -  -  -  -  - 
+  2   -  -  -  -  -  -  -  -  - 
+  1   -  -  -  -  -  -  -  -  - 
+ ROW  1  2  3  4  5  6  7  8  9 
+[Me] (2,2)
+It's not your team's turn to place a piece.
+O Team has placed their piece, X Team's turn now.
+ COL 
+  9   -  -  -  -  -  -  -  -  - 
+  8   -  -  -  -  -  -  -  -  - 
+  7   -  -  -  -  -  -  -  -  - 
+  6   -  -  -  -  -  -  -  -  - 
+  5   -  -  -  0  X  -  -  -  - 
+  4   -  -  -  -  -  -  -  -  - 
+  3   -  -  -  -  -  -  -  -  - 
+  2   -  -  -  -  -  -  -  -  - 
+  1   -  -  -  -  -  -  -  -  - 
+ ROW  1  2  3  4  5  6  7  8  9 
+[Me] (6,5)
+X Team has placed their piece, O Team's turn now.
+ COL 
+  9   -  -  -  -  -  -  -  -  - 
+  8   -  -  -  -  -  -  -  -  - 
+  7   -  -  -  -  -  -  -  -  - 
+  6   -  -  -  -  X  -  -  -  - 
+  5   -  -  -  0  X  -  -  -  - 
+  4   -  -  -  -  -  -  -  -  - 
+  3   -  -  -  -  -  -  -  -  - 
+  2   -  -  -  -  -  -  -  -  - 
+  1   -  -  -  -  -  -  -  -  - 
+ ROW  1  2  3  4  5  6  7  8  9 
+O Team has placed their piece, X Team's turn now.
+ COL 
+  9   -  -  -  -  -  -  -  -  - 
+  8   -  -  -  -  -  -  -  -  - 
+  7   -  -  -  -  -  -  -  -  - 
+  6   -  -  -  -  X  -  -  -  - 
+  5   -  -  -  0  X  -  -  -  - 
+  4   -  -  -  -  0  -  -  -  - 
+  3   -  -  -  -  -  -  -  -  - 
+  2   -  -  -  -  -  -  -  -  - 
+  1   -  -  -  -  -  -  -  -  - 
+ ROW  1  2  3  4  5  6  7  8  9 
+[Me] (7,8)
+X Team has placed their piece, O Team's turn now.
+ COL 
+  9   -  -  -  -  -  -  -  -  - 
+  8   -  -  -  -  -  -  -  -  - 
+  7   -  -  -  -  -  -  -  X  - 
+  6   -  -  -  -  X  -  -  -  - 
+  5   -  -  -  0  X  -  -  -  - 
+  4   -  -  -  -  0  -  -  -  - 
+  3   -  -  -  -  -  -  -  -  - 
+  2   -  -  -  -  -  -  -  -  - 
+  1   -  -  -  -  -  -  -  -  - 
+ ROW  1  2  3  4  5  6  7  8  9 
+O Wins!
+ COL 
+  9   -  -  -  -  -  -  -  -  - 
+  8   -  -  -  -  -  -  -  -  - 
+  7   -  -  -  -  -  -  -  X  - 
+  6   -  -  0  -  X  -  -  -  - 
+  5   -  -  -  0  X  -  -  -  - 
+  4   -  -  -  -  0  -  -  -  - 
+  3   -  -  -  -  -  -  -  -  - 
+  2   -  -  -  -  -  -  -  -  - 
+  1   -  -  -  -  -  -  -  -  - 
+ ROW  1  2  3  4  5  6  7  8  9 
+[Me] 
+Disconnected from chat server
+
+**********
+Player 2:
+**********
+
+Connected to remote host. You can start sending messages
+[127.0.0.1:49364] entered our game, joining O team
+X Team has placed their piece, O Team's turn now.
+ COL 
+  9   -  -  -  -  -  -  -  -  - 
+  8   -  -  -  -  -  -  -  -  - 
+  7   -  -  -  -  -  -  -  -  - 
+  6   -  -  -  -  -  -  -  -  - 
+  5   -  -  -  -  X  -  -  -  - 
+  4   -  -  -  -  -  -  -  -  - 
+  3   -  -  -  -  -  -  -  -  - 
+  2   -  -  -  -  -  -  -  -  - 
+  1   -  -  -  -  -  -  -  -  - 
+ ROW  1  2  3  4  5  6  7  8  9 
+[Me] (5,4)
+O Team has placed their piece, X Team's turn now.
+ COL 
+  9   -  -  -  -  -  -  -  -  - 
+  8   -  -  -  -  -  -  -  -  - 
+  7   -  -  -  -  -  -  -  -  - 
+  6   -  -  -  -  -  -  -  -  - 
+  5   -  -  -  0  X  -  -  -  - 
+  4   -  -  -  -  -  -  -  -  - 
+  3   -  -  -  -  -  -  -  -  - 
+  2   -  -  -  -  -  -  -  -  - 
+  1   -  -  -  -  -  -  -  -  - 
+ ROW  1  2  3  4  5  6  7  8  9 
+X Team has placed their piece, O Team's turn now.
+ COL 
+  9   -  -  -  -  -  -  -  -  - 
+  8   -  -  -  -  -  -  -  -  - 
+  7   -  -  -  -  -  -  -  -  - 
+  6   -  -  -  -  X  -  -  -  - 
+  5   -  -  -  0  X  -  -  -  - 
+  4   -  -  -  -  -  -  -  -  - 
+  3   -  -  -  -  -  -  -  -  - 
+  2   -  -  -  -  -  -  -  -  - 
+  1   -  -  -  -  -  -  -  -  - 
+ ROW  1  2  3  4  5  6  7  8  9 
+[Me] (0,8(
+That is not a valid position. Enter "(row,col)" to play a piece.
+[Me] (0,8)
+That piece is out of bounds.  Try again.
+[Me] (4,5)
+O Team has placed their piece, X Team's turn now.
+ COL 
+  9   -  -  -  -  -  -  -  -  - 
+  8   -  -  -  -  -  -  -  -  - 
+  7   -  -  -  -  -  -  -  -  - 
+  6   -  -  -  -  X  -  -  -  - 
+  5   -  -  -  0  X  -  -  -  - 
+  4   -  -  -  -  0  -  -  -  - 
+  3   -  -  -  -  -  -  -  -  - 
+  2   -  -  -  -  -  -  -  -  - 
+  1   -  -  -  -  -  -  -  -  - 
+ ROW  1  2  3  4  5  6  7  8  9 
+X Team has placed their piece, O Team's turn now.
+ COL 
+  9   -  -  -  -  -  -  -  -  - 
+  8   -  -  -  -  -  -  -  -  - 
+  7   -  -  -  -  -  -  -  X  - 
+  6   -  -  -  -  X  -  -  -  - 
+  5   -  -  -  0  X  -  -  -  - 
+  4   -  -  -  -  0  -  -  -  - 
+  3   -  -  -  -  -  -  -  -  - 
+  2   -  -  -  -  -  -  -  -  - 
+  1   -  -  -  -  -  -  -  -  - 
+ ROW  1  2  3  4  5  6  7  8  9 
+[Me] (6,3)
+O Wins!
+ COL 
+  9   -  -  -  -  -  -  -  -  - 
+  8   -  -  -  -  -  -  -  -  - 
+  7   -  -  -  -  -  -  -  X  - 
+  6   -  -  0  -  X  -  -  -  - 
+  5   -  -  -  0  X  -  -  -  - 
+  4   -  -  -  -  0  -  -  -  - 
+  3   -  -  -  -  -  -  -  -  - 
+  2   -  -  -  -  -  -  -  -  - 
+  1   -  -  -  -  -  -  -  -  - 
+ ROW  1  2  3  4  5  6  7  8  9 
+[Me] 
+Disconnected from chat server
+
+----------------------------------------------------------

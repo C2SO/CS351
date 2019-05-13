@@ -1,0 +1,79 @@
+# Author: Daniel Harvey
+
+--------------------------------------
+OUTPUT FOR 
+
+numberOfArgsCh3.py: 
+There are 0 arguments.
+There are less than 3 arguments
+
+numberOfArgsCh3.py 1 two 3:
+There are 3 arguments.
+There are 3 or more arguments
+
+numberOfArgsCh3.py 1 2 3 4 5:
+There are 5 arguments.
+There are 3 or more arguments
+
+-------------------------------------
+OUTPUT FOR
+
+daysOfTheWeekCh4.py:
+{1: 'Sunday', 2: 'Monday', 3: 'Tuesday', 4: 'Wednesday', 5: 'Thursday', 6: 'Friday', 7: 'Saturday'}
+[1, 2, 3, 4, 5, 6, 7]
+('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday')
+
+-------------------------------------
+OUTPUT FOR
+
+determineStatus.py #Where age=22:
+adult
+
+determineStatus.py #Where age=-1:
+<<no output>>
+
+determineStatus.py #Where age=15:
+child
+
+determineStatus.py #Where age=65:
+senior
+
+determineStatus.py #Where age=100:
+senior
+
+------------------------------------
+OUTPUT FOR
+
+guessGame.py:
+Guess the integer between 5 and 15: 7
+COLD
+Guess the integer between 5 and 15: 11
+HOT
+Guess the integer between 5 and 15: 12
+MATCH
+You took 3 guesses.
+12
+
+
+guessGame.py:
+Guess the integer between 5 and 15: 4
+COLD
+Guess the integer between 5 and 15: 10
+HOT
+Guess the integer between 5 and 15: 11
+HOT
+Guess the integer between 5 and 15: 12
+COLD
+Guess the integer between 5 and 15: 8
+HOT
+Guess the integer between 5 and 15: 7
+HOT
+Guess the integer between 5 and 15: 9
+MATCH
+You took 7 guesses.
+9
+
+---------------------------------------
+OUTPUT FOR
+
+client.py and server.py: <<see .png screenshot in directory>>

@@ -1,0 +1,7 @@
+Textbooks for this course are on the server:
+
+	Kurose - Computer Networking
+	
+	Tanenbaum - Distributed Systems: Principles and Paradigms
+	
+	Hwang - Distributed and Cloud Computing
