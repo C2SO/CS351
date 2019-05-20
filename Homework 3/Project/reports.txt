@@ -1,0 +1,4 @@
+Time on EMR - 7 minutes
+Map Nodes - 2
+Reduce Nodes - 2
+Time Spent - 20+ hours
