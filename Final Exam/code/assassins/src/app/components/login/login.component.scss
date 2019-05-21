@@ -1,0 +1,21 @@
+.login-card {
+    width: 33%;
+
+    .login-header {
+        display: inline;
+    }
+
+    .login-content {
+        width: 100%;
+        padding-top: 16px;
+
+        mat-form-field {
+            width: 80%;
+        }
+    }
+
+    .login-actions {
+        width: 100%;
+        padding: 0;
+    }
+}
