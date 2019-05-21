@@ -1,0 +1,39 @@
+[debug] [2019-05-21T18:28:18.664Z] ----------------------------------------------------------------------
+[debug] [2019-05-21T18:28:18.667Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Owner\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-05-21T18:28:18.667Z] CLI Version:   6.10.0
+[debug] [2019-05-21T18:28:18.667Z] Platform:      win32
+[debug] [2019-05-21T18:28:18.667Z] Node Version:  v10.15.1
+[debug] [2019-05-21T18:28:18.669Z] Time:          Tue May 21 2019 14:28:18 GMT-0400 (Eastern Daylight Time)
+[debug] [2019-05-21T18:28:18.669Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-05-21T18:28:18.681Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-05-21T18:28:18.681Z] > authorizing via signed-in user
+[debug] [2019-05-21T18:28:18.682Z] [iam] checking project cs351-final-exam-57cc4 for permissions ["firebase.projects.get"]
+[debug] [2019-05-21T18:28:18.683Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-05-21T18:28:18.683Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-05-21T18:28:18.871Z] <<< HTTP RESPONSE 200
+[debug] [2019-05-21T18:28:18.880Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/cs351-final-exam-57cc4:testIamPermissions  
+
+[debug] [2019-05-21T18:28:19.489Z] <<< HTTP RESPONSE 200
+[debug] [2019-05-21T18:28:19.490Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/cs351-final-exam-57cc4  
+ 
+[debug] [2019-05-21T18:28:20.001Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Owner\Desktop\Github\CS351\Final Exam\code\assassins'...
+[info] 
+[warn] !  Your requested "node" version "8" doesn't match your global version "10"
+[debug] [2019-05-21T18:28:20.011Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/945714856779/clients/_:getWebAppConfig  
+ 
+[debug] [2019-05-21T18:28:20.012Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/945714856779:getServerAppConfig  
+ 
+[debug] [2019-05-21T18:28:20.208Z] <<< HTTP RESPONSE 200
+[info] +  functions: Emulator started at http://localhost:5001
+[debug] [2019-05-21T18:28:20.434Z] <<< HTTP RESPONSE 200
+[info] i  functions: Watching "C:\Users\Owner\Desktop\Github\CS351\Final Exam\code\assassins\functions" for Cloud Functions...
+[info] i  hosting: Serving hosting files from: dist
+[info] +  hosting: Local server: http://localhost:5000
+[debug] [2019-05-21T18:28:21.074Z] Functions runtime initialized.
+[debug] [2019-05-21T18:28:21.075Z] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"protect_env":true,"admin_stubs":true}
+[warn] !  The Cloud Functions emulator requires the module "firebase-functions-test" to be installed as a development dependency. To fix this, run "npm install --save-dev firebase-functions-test" in your functions directory.
+[info] i  functions: Your functions could not be parsed due to an issue with your node_modules (see above)
