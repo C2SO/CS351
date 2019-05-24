@@ -10,11 +10,17 @@ import { PublicRoutingModule } from './public-routing.module';
 import { MaterialModule } from '../core/material.module';
 import { HomePageComponent } from './home-page/home-page.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { AuthGuard } from '../core/guard/auth.guard';
+import { UserService } from '../core/service/user.service';
+import { AuthService } from '../core/service/authentication.service';
+import { UserResolver } from '../core/resolver/user.resolver';
 
 @NgModule({
   declarations: [
     HomePageComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +33,11 @@ import { LoginComponent } from './login/login.component';
     ReactiveFormsModule,
     PublicRoutingModule
   ],
-  providers: []
+  providers: [
+    AuthGuard,
+    UserService,
+    AuthService,
+    UserResolver
+  ]
 })
 export class PublicModule { }

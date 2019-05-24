@@ -1,0 +1,21 @@
+.register-card {
+    width: 33%;
+
+    .register-header {
+        display: inline;
+    }
+
+    .register-content {
+        width: 100%;
+        padding-top: 16px;
+
+        mat-form-field {
+            width: 80%;
+        }
+    }
+
+    .register-actions {
+        width: 100%;
+        padding: 0;
+    }
+}

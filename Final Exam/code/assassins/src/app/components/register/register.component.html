@@ -1,0 +1,25 @@
+<form [formGroup]="registerForm">
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <mat-card fxLayout="column" fxLayoutAlign="center center" class="register-card">
+      <mat-card-header class="register-header">
+        Register
+      </mat-card-header>
+      <mat-card-content class="register-content">
+        <div fxLayout="column" fxLayoutAlign="space-evenly center">
+          <mat-form-field>
+            <input matInput placeholder="Email" type="email" formControlName="email">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Password" type="password" formControlName="password">
+          </mat-form-field>
+          <label class="error">{{errorMessage}}</label>
+          <label class="success">{{successMessage}}</label>
+        </div>
+      </mat-card-content>
+      <mat-card-actions class="register-actions" fxLayout="row" fxLayoutAlign="space-evenly center">
+        <button mat-button type="submit" (click)="tryRegister(registerForm.value)">Register</button>
+        <button mat-button routerLink="/login">Already have an account?</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</form>
