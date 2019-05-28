@@ -31,7 +31,7 @@ export class UserPageComponent implements OnInit {
   }
 
   viewDetails(item){
-    this.router.navigate(['/details/' + item.payload.doc.id]);
+    this.router.navigate(['user/details/' + item.payload.doc.id]);
   }
 
   searchByName(){

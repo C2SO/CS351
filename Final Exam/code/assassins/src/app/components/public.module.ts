@@ -16,13 +16,18 @@ import { UserService } from '../core/service/user.service';
 import { AuthService } from '../core/service/authentication.service';
 import { UserResolver } from '../core/resolver/user.resolver';
 import { UserPageComponent } from './user-page/user-page.component';
+import { EditUserComponent } from './user-page/edit-user/edit-user.component';
+import { AvatarDialogComponent } from './user-page/avatar-dialog/avatar-dialog.component';
+import { EditUserResolver } from '../core/resolver/edit-user.resolver';
 
 @NgModule({
   declarations: [
     HomePageComponent,
     LoginComponent,
     RegisterComponent,
-    UserPageComponent
+    UserPageComponent,
+    EditUserComponent,
+    AvatarDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +44,8 @@ import { UserPageComponent } from './user-page/user-page.component';
     AuthGuard,
     UserService,
     AuthService,
-    UserResolver
+    UserResolver,
+    EditUserResolver
   ]
 })
 export class PublicModule { }
