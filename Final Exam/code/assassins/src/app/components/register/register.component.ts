@@ -14,7 +14,7 @@ export class RegisterComponent {
   registerForm: FormGroup;
   errorMessage: string = '';
   successMessage: string = '';
-  avatarLink: string = "https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg";
+  avatarLink: string = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png";
 
   constructor(
     public authService: AuthService,
@@ -53,7 +53,7 @@ export class RegisterComponent {
   }
 
   resetFields() {
-    this.avatarLink = "https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg";
+    this.avatarLink = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png";
     this.registerForm = this.fb.group({
       name: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),

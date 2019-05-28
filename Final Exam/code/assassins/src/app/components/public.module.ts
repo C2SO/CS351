@@ -15,12 +15,14 @@ import { AuthGuard } from '../core/guard/auth.guard';
 import { UserService } from '../core/service/user.service';
 import { AuthService } from '../core/service/authentication.service';
 import { UserResolver } from '../core/resolver/user.resolver';
+import { UserPageComponent } from './user-page/user-page.component';
 
 @NgModule({
   declarations: [
     HomePageComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    UserPageComponent
   ],
   imports: [
     BrowserModule,
