@@ -1,0 +1,23 @@
+<form [formGroup]="loginForm">
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <mat-card fxLayout="column" fxLayoutAlign="center center" class="login-card">
+      <mat-card-header class="login-header">
+        Login
+      </mat-card-header>
+      <mat-card-content class="login-content">
+        <div fxLayout="column" fxLayoutAlign="space-evenly center">
+          <mat-form-field>
+            <input matInput placeholder="Email" type="email" formControlName="email">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Password" type="password" formControlName="password">
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+      <mat-card-actions class="login-actions" fxLayout="row" fxLayoutAlign="space-evenly center">
+        <button mat-button type="submit" (click)="tryLogin(loginForm.value)">Login</button>
+        <button mat-button routerLink="/register">Need an Account?</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</form>
