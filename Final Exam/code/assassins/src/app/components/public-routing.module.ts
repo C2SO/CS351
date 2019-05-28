@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'home-page', pathMatch: 'full' },
   { path: 'login', component: LoginComponent, canActivate: [AuthGuard] },
   { path: 'register', component: RegisterComponent },
-  //{ path: 'sucess', component: SucessComponent , resolve: { data: UserResolver}},
+  { path: 'sucess', component: SucessComponent , resolve: { data: UserResolver}},
   { path: 'home-page', component: HomePageComponent}
 ];
 // add 'resolve: { data: UserResolver}' to a route to make that page reguire a user to be logged in
