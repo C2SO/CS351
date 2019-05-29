@@ -11,10 +11,16 @@
         width="400px" height="400px" class="center" alt="Assassin's creed logo" />
      </p>
     <mat-card-content>
-      <p>
+      <p *ngIf="auth.isLoggedIn()">
         You have sucessfully logged in!
+      </p>
+      <p *ngIf="!auth.isLoggedIn()">
+        You have sucessfully logged out!
       </p>
     </mat-card-content>
     <mat-card-actions>
+        <button mat-button routerLink="/home-page">Return to home page</button>
+        <button mat-button *ngIf="auth.isLoggedIn()" type="submit" (click)="logout()">Log Out</button>
+        <button mat-button *ngIf="!auth.isLoggedIn()" routerLink="/login">Login</button>
     </mat-card-actions>
   </mat-card>
