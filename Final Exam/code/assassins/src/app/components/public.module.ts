@@ -10,6 +10,7 @@ import { PublicRoutingModule } from './public-routing.module';
 import { MaterialModule } from '../core/material.module';
 import { HomePageComponent } from './home-page/home-page.component';
 import { LoginComponent } from './login/login.component';
+import { SucessComponent } from './sucess/sucess.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthGuard } from '../core/guard/auth.guard';
 import { UserService } from '../core/service/user.service';
@@ -24,10 +25,8 @@ import { EditUserResolver } from '../core/resolver/edit-user.resolver';
   declarations: [
     HomePageComponent,
     LoginComponent,
-    RegisterComponent,
     UserPageComponent,
     EditUserComponent,
-    AvatarDialogComponent
   ],
   imports: [
     BrowserModule,
