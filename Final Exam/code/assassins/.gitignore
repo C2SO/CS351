@@ -43,3 +43,7 @@ speed-measure-plugin.json
 # System Files
 .DS_Store
 Thumbs.db
+
+# Firebase Files
+environment.ts
+environment.prod.ts
