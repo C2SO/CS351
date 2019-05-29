@@ -1,12 +1,18 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FirebaseService {
 
-  constructor(public db: AngularFirestore) { }
+  constructor(
+    public db: AngularFirestore,
+    private userService: UserService) {
+  }
+
+  userId: string = this.userService.getCurrentUserId();
 
   getUser(userKey) {
     return this.db.collection('users').doc(userKey).snapshotChanges();
@@ -36,8 +42,8 @@ export class FirebaseService {
   }
 
 
-  createUser(value ) {
-    return this.db.collection('users').add({
+  createUser(value) {
+    return this.db.collection('users/' + this.userId).add({
       name: value.name,
       nameToSearch: value.name.toLowerCase(),
       email: value.email

@@ -12,8 +12,8 @@ import { FirebaseService } from 'src/app/core/service/firebase.service';
 export class RegisterComponent {
 
   registerForm: FormGroup;
-  errorMessage: string = '';
-  successMessage: string = '';
+  errorMessage = '';
+  successMessage = '';
 
   constructor(
     public authService: AuthService,
@@ -35,20 +35,22 @@ export class RegisterComponent {
     this.authService.doRegister(value)
       .then(res => {
         console.log(res);
-        this.errorMessage = "";
-        this.successMessage = "Your account has been created";
+        this.firebaseService.createUser(value).then(x => {
+          this.errorMessage = '';
+          this.successMessage = 'Your account has been created';
+          this.resetFields();
+        }, err => {
+          console.log(err);
+          this.errorMessage = err.message;
+          this.successMessage = '';
+        });
       }, err => {
         console.log(err);
         this.errorMessage = err.message;
-        this.successMessage = "";
+        this.successMessage = '';
       });
 
-    this.firebaseService.createUser(value)
-      .then(
-        res => {
-          this.resetFields();
-        }
-      );
+
   }
 
   resetFields() {

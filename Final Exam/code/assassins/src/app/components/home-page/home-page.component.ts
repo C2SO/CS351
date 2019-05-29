@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/core/service/authentication.service';
+import { UserService } from 'src/app/core/service/user.service';
 
 @Component({
   selector: 'app-home-page',
@@ -8,15 +9,19 @@ import { AuthService } from 'src/app/core/service/authentication.service';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor(private auth: AuthService) { }
-  isLoggedIn = false;    
+  userId = this.userService.getCurrentUserId;
+
+  constructor(
+    private auth: AuthService,
+    private userService: UserService) { }
+  isLoggedIn = false;
 
   logout() {
-    this.auth.doLogout()
+    this.auth.doLogout();
   }
 
   ngOnInit() {
-    this.isLoggedIn  = this.auth.isLoggedIn();
+    this.isLoggedIn = this.auth.isLoggedIn();
   }
 
 }

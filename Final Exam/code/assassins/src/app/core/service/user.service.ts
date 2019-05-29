@@ -1,39 +1,34 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
+import { NONE_TYPE } from '@angular/compiler/src/output/output_ast';
 
 @Injectable()
 export class UserService {
 
   constructor(
-   public db: AngularFirestore,
-   public afAuth: AngularFireAuth
- ){
- }
+    public db: AngularFirestore
+  ) {
+  }
 
 
-  getCurrentUser(){
+  getCurrentUser() {
     return new Promise<any>((resolve, reject) => {
-      var user = firebase.auth().onAuthStateChanged(function(user){
-        if (user) {
-          resolve(user);
+      const user = firebase.auth().onAuthStateChanged(x => {
+        if (x) {
+          resolve(x);
         } else {
           reject('No user logged in');
         }
-      })
-    })
+      });
+    });
   }
 
-  updateCurrentUser(value){
-    return new Promise<any>((resolve, reject) => {
-      var user = firebase.auth().currentUser;
-      user.updateProfile({
-        displayName: value.name,
-        photoURL: user.photoURL
-      }).then(res => {
-        resolve(res);
-      }, err => reject(err))
-    })
+
+  getCurrentUserId() {
+    if (firebase.auth().currentUser) {
+      return firebase.auth().currentUser.uid;
+    }
+    return '';
   }
 }
