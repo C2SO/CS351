@@ -1,32 +1,28 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
-import { BehaviorSubject } from 'rxjs';
-import 'rxjs/add/operator/switchMap';
-import { User } from '../class/user';
-
 @Injectable()
 export class AuthService {
 
   public loggedIn = false;
 
   constructor(
-   public afAuth: AngularFireAuth
- ){
-  this.loggedIn = !!sessionStorage.getItem('user');
- }
+    public afAuth: AngularFireAuth
+  ) {
+    this.loggedIn = !!sessionStorage.getItem('user');
+  }
 
-// Get currently logged in user from session
-getCurrentUser(): string | any {
+  // Get currently logged in user from session
+  getCurrentUser(): string | any {
     return sessionStorage.getItem('user') || undefined;
-}
+  }
 
-// The method to check whether user is logged in or not
-isLoggedIn() {
-  return this.loggedIn;
-}
+  // The method to check whether user is logged in or not
+  isLoggedIn() {
+    return this.loggedIn;
+  }
 
-  doRegister(value){
+  doRegister(value) {
     sessionStorage.setItem('user', value.email);
     this.loggedIn = true;
     return new Promise<any>((resolve, reject) => {
@@ -37,7 +33,7 @@ isLoggedIn() {
     })
   }
 
-  doLogin(value){
+  doLogin(value) {
     sessionStorage.setItem('user', value.email);
     this.loggedIn = true;
     return new Promise<any>((resolve, reject) => {
@@ -48,7 +44,7 @@ isLoggedIn() {
     })
   }
 
-  doLogout(){
+  doLogout() {
     sessionStorage.removeItem('user');
     this.loggedIn = false;
     return new Promise((resolve, reject) => {

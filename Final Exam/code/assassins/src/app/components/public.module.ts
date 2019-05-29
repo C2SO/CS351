@@ -25,7 +25,9 @@ import { EditUserResolver } from '../core/resolver/edit-user.resolver';
     HomePageComponent,
     LoginComponent,
     UserPageComponent,
-    EditUserComponent
+    EditUserComponent,
+    RegisterComponent,
+    SucessComponent
   ],
   imports: [
     BrowserModule,
