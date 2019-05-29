@@ -4,8 +4,6 @@
 /dist
 /tmp
 /out-tsc
-# Only exists if Bazel was run
-/bazel-out
 
 # dependencies
 /node_modules
@@ -45,6 +43,6 @@ testem.log
 .DS_Store
 Thumbs.db
 
-# Firebase Files
+# Environment Files
 environment.ts
 environment.prod.ts
