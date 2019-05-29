@@ -27,5 +27,6 @@
     <mat-card-actions>
         <button mat-button *ngIf="!auth.isLoggedIn()" routerLink="/login">Login</button>
         <button mat-button *ngIf="auth.isLoggedIn()" routerLink="/sucess">Go to User landing page</button>
+        <button mat-button *ngIf="auth.isLoggedIn()" type="submit" (click)="logout()">Log Out</button>
     </mat-card-actions>
   </mat-card>
