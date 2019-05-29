@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { MatDialog } from '@angular/material';
-import { AvatarDialogComponent } from '../avatar-dialog/avatar-dialog.component';
 import { Router } from '@angular/router';
 import { FirebaseService } from 'src/app/core/service/firebase.service';
 
@@ -47,21 +46,7 @@ export class EditUserComponent implements OnInit {
     });
   }
 
-  openDialog() {
-    const dialogRef = this.dialog.open(AvatarDialogComponent, {
-      height: '400px',
-      width: '400px'
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        this.item.avatar = result.link;
-      }
-    });
-  }
-
   onSubmit(value) {
-    value.avatar = this.item.avatar;
     value.age = Number(value.age);
     this.firebaseService.updateUser(this.item.id, value)
       .then(

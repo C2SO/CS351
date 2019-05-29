@@ -18,7 +18,6 @@ import { AuthService } from '../core/service/authentication.service';
 import { UserResolver } from '../core/resolver/user.resolver';
 import { UserPageComponent } from './user-page/user-page.component';
 import { EditUserComponent } from './user-page/edit-user/edit-user.component';
-import { AvatarDialogComponent } from './user-page/avatar-dialog/avatar-dialog.component';
 import { EditUserResolver } from '../core/resolver/edit-user.resolver';
 
 @NgModule({
@@ -26,7 +25,7 @@ import { EditUserResolver } from '../core/resolver/edit-user.resolver';
     HomePageComponent,
     LoginComponent,
     UserPageComponent,
-    EditUserComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,
