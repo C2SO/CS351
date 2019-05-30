@@ -1,31 +1,42 @@
-<div class="edit-page">
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item active" aria-current="page">Edit User</li>
-    </ol>
-  </nav>
-  <div class="page-content">
-    <div class="row">
-      <div class="col col-md-8">
-
-        <form class="edit-form" [formGroup]="exampleForm" novalidate (ngSubmit)="onSubmit(exampleForm.value)">
-
-          <div class="form-group">
-            <mat-form-field class="input-style">
-              <input matInput placeholder="Agent Name" class="form-control" formControlName="name">
-            </mat-form-field>
-            <ng-container *ngFor="let validation of validationMessages.name">
-              <mat-error *ngIf="exampleForm.get('name').hasError(validation.type) && (exampleForm.get('name').dirty || exampleForm.get('name').touched)">{{validation.message}}</mat-error>
-            </ng-container>
-          </div>
-
-          <div class="row submit-button-container">
-            <div class="col-md-4">
-              <button mat-raised-button class="submit-button" color="primary" type="submit" [disabled]="!exampleForm.valid">Save</button>
+<button mat-raised-button routerLink="/home-page">Return to Homepage</button>
+<div fxLayout="column" fxLayoutAlign="center center">
+  <mat-card class="edit-page" fxLayoutAlign="center center" *ngIf="editMode">
+    <div class="page-content">
+      <div class="row">
+        <div class="col col-md-8">
+          <form class="edit-form" [formGroup]="exampleForm" novalidate (ngSubmit)="onSubmit(exampleForm.value)">
+            <div class="form-group">
+              <mat-form-field class="input-style">
+                <input matInput placeholder="Agent Name" class="form-control" formControlName="name">
+              </mat-form-field>
+              <ng-container *ngFor="let validation of validationMessages.name">
+                <mat-error *ngIf="exampleForm.get('name').hasError(validation.type) && (exampleForm.get('name').dirty 
+                  || exampleForm.get('name').touched)">{{validation.message}}</mat-error>
+              </ng-container>
             </div>
-          </div>
-        </form>
+            <div class="row submit-button-container">
+              <div class="col-md-4">
+                <button mat-raised-button class="submit-button" color="primary" type="submit" [disabled]="!exampleForm.valid">Save</button><br />
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
+  </mat-card>
 </div>
+<button mat-raised-button *ngIf="editMode" (click)="editMode ? editMode = false : editMode = true;">Go to Display mode</button>
+
+<div fxLayout="column" fxLayoutAlign="center center">
+  <mat-card class="Display-User-Info" fxLayoutAlign="center center" *ngIf="!editMode">
+    <mat-card-content>
+      <p>
+        User Information:<br /><br />
+        Username: {{ getUserName() }}<br />
+        Email Address: {{ auth.getCurrentUser() }}<br />
+        Target: N/A<br />
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>
+<button mat-raised-button *ngIf="!editMode" (click)="editMode ? editMode = false : editMode = true;">Go to Edit Mode</button>

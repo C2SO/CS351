@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 import { MatDialog } from '@angular/material';
 import { Router } from '@angular/router';
 import { FirebaseService } from 'src/app/core/service/firebase.service';
+import { AuthService } from 'src/app/core/service/authentication.service';
 
 @Component({
   selector: 'app-edit-user',
@@ -26,6 +27,7 @@ export class EditUserComponent implements OnInit {
     private route: ActivatedRoute,
     private fb: FormBuilder,
     private router: Router,
+    private auth: AuthService,
     public dialog: MatDialog
   ) { }
 
@@ -44,6 +46,10 @@ export class EditUserComponent implements OnInit {
     this.exampleForm = this.fb.group({
       name: [this.item.name, Validators.required],
     });
+  }
+
+  getUserName() {
+    return this.item.name;
   }
 
   onSubmit(value) {
