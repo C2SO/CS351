@@ -12,8 +12,6 @@ export class FirebaseService {
     private userService: UserService) {
   }
 
-  userId: string = this.userService.getCurrentUserId();
-
   getUser(userKey) {
     return this.db.collection('users').doc(userKey).snapshotChanges();
   }
@@ -41,9 +39,9 @@ export class FirebaseService {
     return this.db.collection('users', ref => ref.orderBy('age').startAt(value)).snapshotChanges();
   }
 
-
   createUser(value) {
-    return this.db.collection('users/' + this.userId).add({
+    const userId = this.userService.getCurrentUserId();
+    return this.db.collection('users').doc(userId).set({
       name: value.name,
       nameToSearch: value.name.toLowerCase(),
       email: value.email

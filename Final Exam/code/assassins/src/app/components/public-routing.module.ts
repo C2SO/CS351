@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'home-page', component: HomePageComponent},
   { path: 'user', component: UserPageComponent, resolve: { data: UserResolver }},
-  { path: 'user/details/:id', component: EditUserComponent, resolve: {data : EditUserResolver} }
+  { path: 'user/:id', component: EditUserComponent, resolve: {data : EditUserResolver} }
 ];
 // add 'resolve: { data: UserResolver}' to a route to make that page reguire a user to be logged in
 

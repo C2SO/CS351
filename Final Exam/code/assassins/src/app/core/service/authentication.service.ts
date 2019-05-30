@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
+import { UserService } from './user.service';
 @Injectable()
 export class AuthService {
 
   public loggedIn = false;
 
   constructor(
-    public afAuth: AngularFireAuth
+    public afAuth: AngularFireAuth,
+    private userService: UserService
   ) {
     this.loggedIn = !!sessionStorage.getItem('user');
   }
@@ -28,6 +30,7 @@ export class AuthService {
     return new Promise<any>((resolve, reject) => {
       firebase.auth().createUserWithEmailAndPassword(value.email, value.password)
         .then(res => {
+          this.userService.setCurrentUserId(res.user.uid);
           resolve(res);
         }, err => reject(err));
     });
@@ -39,6 +42,7 @@ export class AuthService {
     return new Promise<any>((resolve, reject) => {
       firebase.auth().signInWithEmailAndPassword(value.email, value.password)
         .then(res => {
+          this.userService.setCurrentUserId(res.user.uid);
           resolve(res);
           console.log(firebase.auth().currentUser.uid);
         }, err => reject(err));
@@ -51,6 +55,7 @@ export class AuthService {
     return new Promise((resolve, reject) => {
       if (firebase.auth().currentUser) {
         this.afAuth.auth.signOut();
+        this.userService.setCurrentUserId('');
         resolve();
       } else {
         reject();

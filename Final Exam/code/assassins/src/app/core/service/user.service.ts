@@ -1,21 +1,19 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import * as firebase from 'firebase/app';
-import { NONE_TYPE } from '@angular/compiler/src/output/output_ast';
 
 @Injectable()
 export class UserService {
 
-  constructor(
-    public db: AngularFirestore
-  ) {
-  }
+  constructor(public db: AngularFirestore) { }
 
+  currId: string = '';
 
   getCurrentUser() {
     return new Promise<any>((resolve, reject) => {
       const user = firebase.auth().onAuthStateChanged(x => {
         if (x) {
+          this.setCurrentUserId(x.uid);
           resolve(x);
         } else {
           reject('No user logged in');
@@ -24,11 +22,11 @@ export class UserService {
     });
   }
 
-
   getCurrentUserId() {
-    if (firebase.auth().currentUser) {
-      return firebase.auth().currentUser.uid;
-    }
-    return '';
+    return this.currId;
+  }
+
+  setCurrentUserId(value) {
+    this.currId = value;
   }
 }
