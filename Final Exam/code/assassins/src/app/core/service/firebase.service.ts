@@ -7,22 +7,24 @@ import { UserService } from './user.service';
 })
 export class FirebaseService {
 
+  dbCol = this.db.collection('users');
+
   constructor(
     public db: AngularFirestore,
     private userService: UserService) {
   }
 
   getUser(userKey) {
-    return this.db.collection('users').doc(userKey).snapshotChanges();
+    return this.dbCol.doc(userKey).snapshotChanges();
   }
 
   updateUser(userKey, value) {
     value.nameToSearch = value.name.toLowerCase();
-    return this.db.collection('users').doc(userKey).set(value);
+    return this.dbCol.doc(userKey).set(value);
   }
 
   getUsers() {
-    return this.db.collection('users').snapshotChanges();
+    return this.dbCol.snapshotChanges();
   }
 
   searchUsers(searchValue) {
@@ -37,7 +39,7 @@ export class FirebaseService {
 
   createUser(value) {
     const userId = this.userService.getCurrentUserId();
-    return this.db.collection('users').doc(userId).set({
+    return this.dbCol.doc(userId).set({
       name: value.name,
       nameToSearch: value.name.toLowerCase(),
       email: value.email,
@@ -56,8 +58,16 @@ export class FirebaseService {
   }
 
   setTarget(assassin, target) {
-    this.db.collection('users').doc(assassin).update({
+    this.dbCol.doc(assassin).update({
       target
     });
+  }
+
+  getUserObject(value) {
+    let user: any;
+    this.dbCol.doc(value).get().subscribe(doc => {
+      user = doc.data();
+    });
+    return user;
   }
 }
