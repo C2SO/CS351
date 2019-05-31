@@ -20,7 +20,10 @@ export class FirebaseService {
 
   updateUser(userKey, value) {
     value.nameToSearch = value.name.toLowerCase();
-    return this.dbCol.doc(userKey).set(value);
+    return this.dbCol.doc(userKey).update({
+      nameToSearch: value.nameToSearch,
+      name: value.name
+    });
   }
 
   getUsers() {

@@ -8,7 +8,7 @@
       <mat-list-item *ngFor="let item of items">
         <br />
         Display Name:  {{ item.payload.doc.data().name }}<br />
-        User's Email:  {{ getUserEmailByUID(item.payload.doc.id) }}<br />
+        User's Email:  {{ item.payload.doc.data().email }}<br />
         User's UID:  {{ item.payload.doc.id }}<br />
         Target:  N/A<br />
         <br />

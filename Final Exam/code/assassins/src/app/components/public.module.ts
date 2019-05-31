@@ -18,7 +18,6 @@ import { EditUserComponent } from './user-page/edit-user/edit-user.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { SucessComponent } from './sucess/sucess.component';
 import { UserPageComponent } from './user-page/user-page.component';
 import { ManageRoundsComponent } from './manage-rounds/manage-rounds.component';
 
@@ -29,7 +28,6 @@ import { ManageRoundsComponent } from './manage-rounds/manage-rounds.component';
     UserPageComponent,
     EditUserComponent,
     RegisterComponent,
-    SucessComponent,
     ManageRoundsComponent
   ],
   imports: [
