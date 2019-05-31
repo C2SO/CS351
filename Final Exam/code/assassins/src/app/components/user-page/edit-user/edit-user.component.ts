@@ -15,7 +15,7 @@ export class EditUserComponent implements OnInit {
 
   exampleForm: FormGroup;
   item: any;
-  editMode: Boolean = false;
+  editMode = false;
 
   validationMessages = {
     name: [
@@ -28,7 +28,6 @@ export class EditUserComponent implements OnInit {
     private route: ActivatedRoute,
     private fb: FormBuilder,
     private router: Router,
-    private auth: AuthService,
     public dialog: MatDialog
   ) { }
 

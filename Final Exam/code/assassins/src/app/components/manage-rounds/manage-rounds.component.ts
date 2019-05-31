@@ -2,17 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from 'src/app/core/service/firebase.service';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/core/service/user.service';
-import { AuthService } from 'src/app/core/service/authentication.service';
+import { shuffle } from 'lodash';
 
 @Component({
-  selector: 'app-user-page',
-  templateUrl: './user-page.component.html',
-  styleUrls: ['./user-page.component.scss']
+  selector: 'app-manage-rounds',
+  templateUrl: './manage-rounds.component.html',
+  styleUrls: ['./manage-rounds.component.scss']
 })
-export class UserPageComponent implements OnInit {
+export class ManageRoundsComponent implements OnInit {
 
   searchValue = '';
   items: Array<any>;
+  selectedOptions: string[] = [];
   nameFilteredItems: Array<any>;
 
   currId = '';
@@ -20,7 +21,6 @@ export class UserPageComponent implements OnInit {
   constructor(
     public firebaseService: FirebaseService,
     private router: Router,
-    public auth: AuthService,
     private userService: UserService
   ) { }
 
@@ -40,6 +40,10 @@ export class UserPageComponent implements OnInit {
       });
   }
 
+  viewDetails(item) {
+    this.router.navigate(['user/' + item.payload.doc.id]);
+  }
+
   searchByName() {
     const value = this.searchValue.toLowerCase();
     this.firebaseService.searchUsers(value)
@@ -49,8 +53,9 @@ export class UserPageComponent implements OnInit {
       });
   }
 
-  getUserEmailByUID(value){
-    return value;//this just returns the UID, i am not sure how to make it get the email
+  startRound() {
+    this.firebaseService.startRound(shuffle(this.selectedOptions));
+    this.selectedOptions = [''];
   }
 
 }

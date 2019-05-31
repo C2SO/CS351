@@ -44,7 +44,6 @@ export class AuthService {
         .then(res => {
           this.userService.setCurrentUserId(res.user.uid);
           resolve(res);
-          console.log(firebase.auth().currentUser.uid);
         }, err => reject(err));
     });
   }

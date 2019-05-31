@@ -20,6 +20,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { SucessComponent } from './sucess/sucess.component';
 import { UserPageComponent } from './user-page/user-page.component';
+import { ManageRoundsComponent } from './manage-rounds/manage-rounds.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { UserPageComponent } from './user-page/user-page.component';
     UserPageComponent,
     EditUserComponent,
     RegisterComponent,
-    SucessComponent
+    SucessComponent,
+    ManageRoundsComponent
   ],
   imports: [
     BrowserModule,
