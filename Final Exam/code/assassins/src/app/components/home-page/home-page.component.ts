@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class HomePageComponent implements OnInit {
 
   userId = '';
+  isMod = false;
 
   constructor(
     public auth: AuthService,
@@ -24,6 +25,9 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit() {
     this.isLoggedIn = this.auth.isLoggedIn();
+    if (this.userService.getCurrentUserId() == 'AIbu188nvXhYiTz8QwLBgYo7yWO2'){
+      this.isMod = true;
+    }
   }
 
   navigateToUser() {
