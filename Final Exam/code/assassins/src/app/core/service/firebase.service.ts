@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { UserService } from './user.service';
+import * as firebase from 'firebase';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FirebaseService {
+
+  db2 = firebase.firestore().collection('users');
 
   dbCol = this.db.collection('users');
 
@@ -31,10 +34,6 @@ export class FirebaseService {
     return this.db.collection('users', ref => ref.where('nameToSearch', '>=', searchValue)
       .where('nameToSearch', '<=', searchValue + '\uf8ff'))
       .snapshotChanges();
-  }
-
-  searchUsersByAge(value) {
-    return this.db.collection('users', ref => ref.startAt(value)).snapshotChanges();
   }
 
   createUser(value) {
@@ -64,10 +63,21 @@ export class FirebaseService {
   }
 
   getUserObject(value) {
-    let user: any;
-    this.dbCol.doc(value).get().subscribe(doc => {
-      user = doc.data();
+    return this.db2.doc(value).get();
+  }
+
+  targetEliminated(value) {
+    this.getUserObject(value).then(assassin => {
+      const assassinObject = assassin.data();
+      this.getUserObject(assassinObject.target).then(target => {
+        const targetObject = target.data();
+        if (value === targetObject.target) {
+          this.setTarget(value, '');
+        } else {
+          this.setTarget(value, targetObject.target);
+        }
+        this.setTarget(assassinObject.target, '');
+      });
     });
-    return user;
   }
 }
