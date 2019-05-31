@@ -25,8 +25,7 @@ export class UserPageComponent implements OnInit {
   ngOnInit() {
     this.getData();
     this.currId = this.userService.getCurrentUserId();
-    if (this.currId !== '') {
-      console.log(this.currId);
+    if (this.currId !== 'AIbu188nvXhYiTz8QwLBgYo7yWO2') {
       this.router.navigate(['user/' + this.currId]);
     }
   }

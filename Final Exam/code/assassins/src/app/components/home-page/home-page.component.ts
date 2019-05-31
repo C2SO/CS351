@@ -13,7 +13,7 @@ export class HomePageComponent implements OnInit {
   userId: string = '';
 
   constructor(
-    private auth: AuthService,
+    public auth: AuthService,
     private userService: UserService,
     private router: Router) { }
   isLoggedIn = false;

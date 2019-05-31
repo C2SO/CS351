@@ -6,18 +6,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+import { AuthGuard } from '../core/guard/auth.guard';
+import { AuthService } from '../core/service/authentication.service';
+import { EditUserResolver } from '../core/resolver/edit-user.resolver';
 import { PublicRoutingModule } from './public-routing.module';
 import { MaterialModule } from '../core/material.module';
+import { UserResolver } from '../core/resolver/user.resolver';
+import { UserService } from '../core/service/user.service';
+
+import { EditUserComponent } from './user-page/edit-user/edit-user.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { AuthGuard } from '../core/guard/auth.guard';
-import { UserService } from '../core/service/user.service';
-import { AuthService } from '../core/service/authentication.service';
-import { UserResolver } from '../core/resolver/user.resolver';
+import { SucessComponent } from './sucess/sucess.component';
 import { UserPageComponent } from './user-page/user-page.component';
-import { EditUserComponent } from './user-page/edit-user/edit-user.component';
-import { EditUserResolver } from '../core/resolver/edit-user.resolver';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { EditUserResolver } from '../core/resolver/edit-user.resolver';
     LoginComponent,
     UserPageComponent,
     EditUserComponent,
-    RegisterComponent
+    RegisterComponent,
+    SucessComponent
   ],
   imports: [
     BrowserModule,

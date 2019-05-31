@@ -15,6 +15,7 @@ export class EditUserComponent implements OnInit {
 
   exampleForm: FormGroup;
   item: any;
+  editMode: Boolean = false;
 
   validationMessages = {
     name: [
@@ -63,6 +64,10 @@ export class EditUserComponent implements OnInit {
 
   cancel() {
     this.router.navigate(['/user']);
+  }
+
+  toggleEdit() {
+    this.editMode = !this.editMode;
   }
 
 }
