@@ -17,6 +17,6 @@ export class EditUserResolver implements Resolve<any> {
           resolve(data);
         }
       );
-    })
+    });
   }
 }
