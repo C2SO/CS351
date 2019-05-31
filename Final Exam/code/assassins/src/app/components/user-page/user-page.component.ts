@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from 'src/app/core/service/firebase.service';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/core/service/user.service';
+import { AuthService } from 'src/app/core/service/authentication.service';
 
 @Component({
   selector: 'app-user-page',
@@ -19,6 +20,7 @@ export class UserPageComponent implements OnInit {
   constructor(
     public firebaseService: FirebaseService,
     private router: Router,
+    public auth: AuthService,
     private userService: UserService
   ) { }
 
