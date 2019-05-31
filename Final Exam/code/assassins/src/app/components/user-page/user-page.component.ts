@@ -53,4 +53,8 @@ export class UserPageComponent implements OnInit {
     this.router.navigate(['user/' + item.payload.doc.id]);
   }
 
+  public targetEliminated(item) {
+    this.firebaseService.targetEliminated(item.payload.doc.id);
+  }
+
 }

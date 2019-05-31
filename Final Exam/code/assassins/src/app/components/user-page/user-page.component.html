@@ -13,6 +13,7 @@
         Target:  N/A<br />
         <br />
         <button mat-button class="btn btn-outline-primary action" (click)="viewDetails(item)" type="button">Details</button>
+        <button mat-button *ngIf="item.payload.doc.data().target !== ''" (click)="targetEliminated(item)" type="button">Target Eliminated</button>
         <br />
       </mat-list-item>
     </mat-nav-list>
