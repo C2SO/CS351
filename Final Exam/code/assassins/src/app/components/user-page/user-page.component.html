@@ -1,25 +1,31 @@
 <div fxLayout="column" fxLayoutAlign="center center">
   <mat-card class="example-card">
     <mat-card-content>
-      Search users by name:<br /><br />
+        Search users by name:<br /><br />
       <input matInput type="text" class="form-control" [(ngModel)]="searchValue" [ngModelOptions]="{standalone: true}" placeholder="Search by name..." (keyup)="searchByName()">
     </mat-card-content>
-    <div *ngFor="let item of items">
-      <mat-card md-colors="{background: 'blue-grey-500'}" style="background: rgb(71, 95, 107); color: rgb(255, 255, 255);">
-        <mat-card-content>
-          <h5 class="mb-1">Display Name:  {{ item.payload.doc.data().name }}</h5>
-          <h5 class="mb-1">User's Email:  {{ getUserEmailByUID(item.payload.doc.id) }}</h5>
-          <h5 class="mb-1">User's UID:  {{ item.payload.doc.id }}</h5>
-          <h5 class="mb-1">Target:  N/A</h5>
-  	    </mat-card-content>
-        <mat-card-actions>
-          <button mat-button class="btn btn-outline-primary action" (click)="viewDetails(item)" type="button">Details</button>
-        </mat-card-actions>
-      </mat-card>
-      <br />
-    </div>
+    <style>
+      .app-class .mat-list-item {
+        height: auto;
+      }
+    </style>
+    <mat-nav-list class="app-class" style="background: rgb(71, 95, 107); color: rgb(255, 255, 255);">
+      <mat-list-item *ngFor="let item of items">
+        <br />
+        Display Name:  {{ item.payload.doc.data().name }}<br />
+        User's Email:  {{ getUserEmailByUID(item.payload.doc.id) }}<br />
+        User's UID:  {{ item.payload.doc.id }}<br />
+        Target:  N/A<br />
+        <br />
+        <button mat-button class="btn btn-outline-primary action" (click)="viewDetails(item)" type="button">Details</button>
+        <br />
+      </mat-list-item>
+      <!-- <mat-action-list>
+        <button mat-button class="btn btn-outline-primary action" (click)="viewDetails(item)" type="button">Details</button>
+      </mat-action-list> -->
+    </mat-nav-list>
     <mat-card-actions>
       <button mat-button routerLink="/home-page">Return to Homepage</button>
     </mat-card-actions>
-  </mat-card>
+    </mat-card>
 </div>
