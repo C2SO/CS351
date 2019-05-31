@@ -44,7 +44,8 @@ export class FirebaseService {
     return this.db.collection('users').doc(userId).set({
       name: value.name,
       nameToSearch: value.name.toLowerCase(),
-      email: value.email
+      email: value.email,
+      target: ''
     });
   }
 }
