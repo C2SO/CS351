@@ -15,7 +15,7 @@ export class EditUserComponent implements OnInit {
 
   exampleForm: FormGroup;
   item: any;
-  editMode: boolean = false;
+  editMode = false;
 
   validationMessages = {
     name: [

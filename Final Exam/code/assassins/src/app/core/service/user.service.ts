@@ -29,4 +29,9 @@ export class UserService {
   setCurrentUserId(value) {
     this.currId = value;
   }
+
+  initCurrentUserId() {
+    this.currId = firebase.auth().currentUser.uid;
+    console.log(this.currId);
+  }
 }

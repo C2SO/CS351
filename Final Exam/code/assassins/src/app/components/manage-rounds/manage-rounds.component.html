@@ -1,0 +1,19 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+  <mat-card class="example-card">
+    <mat-card-content>
+      Search users by name:<br /><br />
+      <input matInput type="text" class="form-control" [(ngModel)]="searchValue" [ngModelOptions]="{standalone: true}"
+        placeholder="Search by name..." (keyup)="searchByName()">
+    </mat-card-content>
+    <mat-selection-list #users [(ngModel)]="selectedOptions" (ngModelChange)="onNgModelChange($event)">
+      <mat-list-option *ngFor="let item of items" [value]="item.payload.doc.data().name"
+        (click)="onAreaListControlChanged(item)">
+        {{item.payload.doc.data().name}}
+      </mat-list-option>
+    </mat-selection-list>
+  </mat-card>
+</div>
+
+<p>
+  Options selected: {{ selectedOptions | json }}
+</p>
