@@ -6,23 +6,29 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+import { AuthGuard } from '../core/guard/auth.guard';
+import { AuthService } from '../core/service/authentication.service';
+import { EditUserResolver } from '../core/resolver/edit-user.resolver';
 import { PublicRoutingModule } from './public-routing.module';
 import { MaterialModule } from '../core/material.module';
+import { UserResolver } from '../core/resolver/user.resolver';
+import { UserService } from '../core/service/user.service';
+
+import { EditUserComponent } from './user-page/edit-user/edit-user.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { LoginComponent } from './login/login.component';
-import { SucessComponent } from './sucess/sucess.component';
 import { RegisterComponent } from './register/register.component';
-import { AuthGuard } from '../core/guard/auth.guard';
-import { UserService } from '../core/service/user.service';
-import { AuthService } from '../core/service/authentication.service';
-import { UserResolver } from '../core/resolver/user.resolver';
+import { UserPageComponent } from './user-page/user-page.component';
+import { ManageRoundsComponent } from './manage-rounds/manage-rounds.component';
 
 @NgModule({
   declarations: [
     HomePageComponent,
     LoginComponent,
-    SucessComponent,
-    RegisterComponent
+    UserPageComponent,
+    EditUserComponent,
+    RegisterComponent,
+    ManageRoundsComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +45,8 @@ import { UserResolver } from '../core/resolver/user.resolver';
     AuthGuard,
     UserService,
     AuthService,
-    UserResolver
+    UserResolver,
+    EditUserResolver
   ]
 })
 export class PublicModule { }

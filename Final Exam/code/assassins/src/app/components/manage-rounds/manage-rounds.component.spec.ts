@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SucessComponent } from './sucess.component';
+import { ManageRoundsComponent } from './manage-rounds.component';
 
-describe('SucessComponent', () => {
-  let component: SucessComponent;
-  let fixture: ComponentFixture<SucessComponent>;
+describe('ManageRoundsComponent', () => {
+  let component: ManageRoundsComponent;
+  let fixture: ComponentFixture<ManageRoundsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SucessComponent ]
+      declarations: [ ManageRoundsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SucessComponent);
+    fixture = TestBed.createComponent(ManageRoundsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

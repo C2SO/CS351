@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/core/service/authentication.service';
+import { UserService } from 'src/app/core/service/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -8,15 +10,29 @@ import { AuthService } from 'src/app/core/service/authentication.service';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor(private auth: AuthService) { }
-  isLoggedIn = false;    
+  userId = '';
+  isMod = false;
+
+  constructor(
+    public auth: AuthService,
+    private userService: UserService,
+    private router: Router) { }
+  isLoggedIn = false;
 
   logout() {
-    this.auth.doLogout()
+    this.auth.doLogout();
   }
 
   ngOnInit() {
-    this.isLoggedIn  = this.auth.isLoggedIn();
+    this.isLoggedIn = this.auth.isLoggedIn();
+    if (this.userService.getCurrentUserId() === 'AIbu188nvXhYiTz8QwLBgYo7yWO2') {
+      this.isMod = true;
+    }
+  }
+
+  navigateToUser() {
+    this.userId = this.userService.getCurrentUserId();
+    this.router.navigate(['/user/' + this.userId]);
   }
 
 }
