@@ -49,8 +49,12 @@ export class UserPageComponent implements OnInit {
       });
   }
 
-  getUserEmailByUID(value){
-    return value;//this just returns the UID, i am not sure how to make it get the email
+  viewDetails(item) {
+    this.router.navigate(['user/' + item.payload.doc.id]);
+  }
+
+  getUserEmailByUID(value) {
+    return value; // this just returns the UID, i am not sure how to make it get the email
   }
 
 }

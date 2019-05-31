@@ -69,8 +69,8 @@ export class EditUserComponent implements OnInit {
     this.editMode = !this.editMode;
   }
 
-  getUserEmailByUID(value){
-    return value;//this just returns the UID, i am not sure how to make it get the email
+  getUserEmailByUID(value) {
+    return value; // this just returns the UID, i am not sure how to make it get the email
   }
 
 
