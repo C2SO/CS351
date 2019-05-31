@@ -10,11 +10,11 @@ import { UserService } from 'src/app/core/service/user.service';
 })
 export class UserPageComponent implements OnInit {
 
-  searchValue: string = '';
+  searchValue = '';
   items: Array<any>;
-  name_filtered_items: Array<any>;
+  nameFilteredItems: Array<any>;
 
-  currId: string = '';
+  currId = '';
 
   constructor(
     public firebaseService: FirebaseService,
@@ -34,8 +34,8 @@ export class UserPageComponent implements OnInit {
     this.firebaseService.getUsers()
       .subscribe(result => {
         this.items = result;
-        this.name_filtered_items = result;
-      })
+        this.nameFilteredItems = result;
+      });
   }
 
   viewDetails(item) {
@@ -43,12 +43,12 @@ export class UserPageComponent implements OnInit {
   }
 
   searchByName() {
-    let value = this.searchValue.toLowerCase();
+    const value = this.searchValue.toLowerCase();
     this.firebaseService.searchUsers(value)
       .subscribe(result => {
-        this.name_filtered_items = result;
+        this.nameFilteredItems = result;
         this.items = result;
-      })
+      });
   }
 
 }

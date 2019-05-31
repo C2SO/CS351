@@ -36,7 +36,7 @@ export class FirebaseService {
   }
 
   searchUsersByAge(value) {
-    return this.db.collection('users', ref => ref.orderBy('age').startAt(value)).snapshotChanges();
+    return this.db.collection('users', ref => ref.startAt(value)).snapshotChanges();
   }
 
   createUser(value) {

@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class HomePageComponent implements OnInit {
 
-  userId: string = '';
+  userId = '';
 
   constructor(
     public auth: AuthService,

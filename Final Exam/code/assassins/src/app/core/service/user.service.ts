@@ -7,7 +7,7 @@ export class UserService {
 
   constructor(public db: AngularFirestore) { }
 
-  currId: string = '';
+  private currId: string = '';
 
   getCurrentUser() {
     return new Promise<any>((resolve, reject) => {
