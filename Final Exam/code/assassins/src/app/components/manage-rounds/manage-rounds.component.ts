@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from 'src/app/core/service/firebase.service';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/core/service/user.service';
+import { shuffle } from 'lodash';
 
 @Component({
   selector: 'app-manage-rounds',
@@ -52,9 +53,9 @@ export class ManageRoundsComponent implements OnInit {
       });
   }
 
-  onAreaListControlChanged(list) {
-    this.selectedOptions = list.selectedOptions.selected.map(item => item.value);
-    console.log(this.selectedOptions);
+  startRound() {
+    this.firebaseService.startRound(shuffle(this.selectedOptions));
+    this.selectedOptions = [''];
   }
 
 }

@@ -5,15 +5,17 @@
       <input matInput type="text" class="form-control" [(ngModel)]="searchValue" [ngModelOptions]="{standalone: true}"
         placeholder="Search by name..." (keyup)="searchByName()">
     </mat-card-content>
-    <mat-selection-list #users [(ngModel)]="selectedOptions" (ngModelChange)="onNgModelChange($event)">
-      <mat-list-option *ngFor="let item of items" [value]="item.payload.doc.data().name"
-        (click)="onAreaListControlChanged(item)">
+    <mat-selection-list #users [(ngModel)]="selectedOptions">
+      <mat-list-option *ngFor="let item of items" [value]="item.payload.doc.id">
         {{item.payload.doc.data().name}}
       </mat-list-option>
     </mat-selection-list>
+    <mat-card-actions>
+      <button mat-button (click)="startRound()">Start Round</button>
+    </mat-card-actions>
   </mat-card>
 </div>
 
-<p>
+<!-- <p>
   Options selected: {{ selectedOptions | json }}
-</p>
+</p> -->

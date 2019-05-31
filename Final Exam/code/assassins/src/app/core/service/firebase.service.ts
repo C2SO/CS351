@@ -21,10 +21,6 @@ export class FirebaseService {
     return this.db.collection('users').doc(userKey).set(value);
   }
 
-  deleteUser(userKey) {
-    return this.db.collection('users').doc(userKey).delete();
-  }
-
   getUsers() {
     return this.db.collection('users').snapshotChanges();
   }
@@ -46,6 +42,22 @@ export class FirebaseService {
       nameToSearch: value.name.toLowerCase(),
       email: value.email,
       target: ''
+    });
+  }
+
+  startRound(value: string[]) {
+    for (let i = 0; i < value.length; i++) {
+      if (!(i + 1 >= value.length)) {
+        this.setTarget(value[i], value[i + 1]);
+      } else {
+        this.setTarget(value[i], value[0]);
+      }
+    }
+  }
+
+  setTarget(assassin, target) {
+    this.db.collection('users').doc(assassin).update({
+      target
     });
   }
 }
