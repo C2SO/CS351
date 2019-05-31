@@ -1,27 +1,16 @@
 <div fxLayout="column" fxLayoutAlign="center center">
-
   <mat-card class="example-card">
     <mat-card-content>
       Search users by name:<br /><br />
       <input matInput type="text" class="form-control" [(ngModel)]="searchValue" [ngModelOptions]="{standalone: true}" placeholder="Search by name..." (keyup)="searchByName()">
     </mat-card-content>
-    <mat-card-actions>
-      <!-- <button mat-button (click)="searchByName()">Search Users</button> -->
-    </mat-card-actions>
-  </mat-card>
-
-  <div class="list-group users-list">
-    <div *ngFor="let item of items" class="list-group-item list-group-item-action flex-column align-items-start">
-      <br />
-	    <mat-card class="example-card">
-        <mat-card-content>
-          <h5 class="mb-1">{{item.payload.doc.data().name}}</h5>
-		    </mat-card-content>
-        <mat-card-actions>
-          <button mat-button class="btn btn-outline-primary action" (click)="viewDetails(item)" type="button">Details</button>
-        </mat-card-actions>
-      </mat-card>
+    <div *ngFor="let item of items">
+      <mat-card-content>
+        <h5 class="mb-1">{{item.payload.doc.data().name}}</h5>
+	    </mat-card-content>
+      <mat-card-actions>
+        <button mat-button class="btn btn-outline-primary action" (click)="viewDetails(item)" type="button">Details</button>
+      </mat-card-actions>
     </div>
-  </div>
-
+  </mat-card>
 </div>
