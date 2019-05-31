@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material';
 import { Router } from '@angular/router';
 import { FirebaseService } from 'src/app/core/service/firebase.service';
-import { AuthService } from 'src/app/core/service/authentication.service';
+import { UserService } from 'src/app/core/service/user.service';
 
 @Component({
   selector: 'app-edit-user',
@@ -23,17 +23,26 @@ export class EditUserComponent implements OnInit {
     ],
   };
 
+  currId = '';
+
   constructor(
     public firebaseService: FirebaseService,
     private route: ActivatedRoute,
     private fb: FormBuilder,
     private router: Router,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private userService: UserService
   ) { }
 
   ngOnInit() {
     this.route.data.subscribe(routeData => {
       const data = routeData.data;
+      this.currId = this.userService.getCurrentUserId();
+      if (this.currId === 'AIbu188nvXhYiTz8QwLBgYo7yWO2') {
+        this.router.navigate(['user/' + this.route.snapshot.data.data.payload.id]);
+      } else if (this.currId !== this.route.snapshot.data.data.payload.id) {
+        this.router.navigate(['user/' + this.currId]);
+      }
       if (data) {
         this.item = data.payload.data();
         this.item.id = data.payload.id;
