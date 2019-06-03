@@ -38,7 +38,7 @@ export class EditUserComponent implements OnInit {
     this.route.data.subscribe(routeData => {
       const data = routeData.data;
       this.currId = this.userService.getCurrentUserId();
-      if (this.currId === 'AIbu188nvXhYiTz8QwLBgYo7yWO2') {
+      if (this.currId === this.userService.getModId()) {
         this.router.navigate(['user/' + this.route.snapshot.data.data.payload.id]);
       } else if (this.currId !== this.route.snapshot.data.data.payload.id) {
         this.router.navigate(['user/' + this.currId]);
