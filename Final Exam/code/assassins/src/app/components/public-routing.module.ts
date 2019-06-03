@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AuthGuard } from '../core/guard/auth.guard';
+import { ModGuard } from '../core/guard/mod.guard';
 import { EditUserResolver } from '../core/resolver/edit-user.resolver';
 import { UserResolver } from '../core/resolver/user.resolver';
 
@@ -13,6 +14,7 @@ import { RegisterComponent } from './register/register.component';
 import { UserPageComponent } from './user-page/user-page.component';
 
 const routes: Routes = [
+  { path: '**', redirectTo: 'home-page', pathMatch: 'full' },
   { path: '', redirectTo: 'home-page', pathMatch: 'full' },
   { path: 'login', component: LoginComponent, canActivate: [AuthGuard] },
   { path: 'register', component: RegisterComponent },
