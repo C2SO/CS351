@@ -21,7 +21,7 @@
     </mat-card-content>
     <mat-card-actions>
         <button mat-button *ngIf="!auth.isLoggedIn()" routerLink="/login">Login</button>
-        <button mat-button *ngIf="auth.isLoggedIn()" (click)="navigateToUser()">View/Edit User Information</button>
+        <button mat-button *ngIf="auth.isLoggedIn() && !isMod" (click)="navigateToUser()">View/Edit User Information</button>
         <button mat-button *ngIf="isMod" routerLink="/user">View all user page</button>
         <button mat-button *ngIf="isMod" routerLink="/manage-rounds">Manage Rounds</button>
         <button mat-button *ngIf="auth.isLoggedIn()" type="submit" (click)="logout()">Log Out</button>

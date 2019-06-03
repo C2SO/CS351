@@ -24,6 +24,7 @@ export class EditUserComponent implements OnInit {
   };
 
   currId = '';
+  isMod = false;
 
   constructor(
     public firebaseService: FirebaseService,
@@ -35,6 +36,9 @@ export class EditUserComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    if (this.userService.getCurrentUserId() === this.userService.getModId()) {
+      this.isMod = true;
+    }
     this.route.data.subscribe(routeData => {
       const data = routeData.data;
       this.currId = this.userService.getCurrentUserId();
