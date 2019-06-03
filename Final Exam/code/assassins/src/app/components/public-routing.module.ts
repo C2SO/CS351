@@ -14,14 +14,14 @@ import { RegisterComponent } from './register/register.component';
 import { UserPageComponent } from './user-page/user-page.component';
 
 const routes: Routes = [
-  { path: '**', redirectTo: 'home-page', pathMatch: 'full' },
   { path: '', redirectTo: 'home-page', pathMatch: 'full' },
   { path: 'login', component: LoginComponent, canActivate: [AuthGuard] },
   { path: 'register', component: RegisterComponent },
   { path: 'home-page', component: HomePageComponent},
   { path: 'user', component: UserPageComponent, resolve: { data: UserResolver }},
   { path: 'user/:id', component: EditUserComponent, resolve: {data : EditUserResolver} },
-  { path: 'manage-rounds', component: ManageRoundsComponent, resolve: { data: UserResolver}}
+  { path: 'manage-rounds', component: ManageRoundsComponent, resolve: { data: UserResolver}},
+  { path: '**', redirectTo: 'home-page', pathMatch: 'full' } //keep this on the bottom of the list
 ];
 // add 'resolve: { data: UserResolver}' to a route to make that page reguire a user to be logged in
 

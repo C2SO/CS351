@@ -54,7 +54,9 @@ export class ManageRoundsComponent implements OnInit {
   }
 
   startRound() {
-    this.firebaseService.startRound(shuffle(this.selectedOptions));
+    if (this.selectedOptions.length !== 1) {
+      this.firebaseService.startRound(shuffle(this.selectedOptions));
+    }
     this.selectedOptions = [''];
   }
 

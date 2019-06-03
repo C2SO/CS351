@@ -5,7 +5,7 @@
         <input matInput placeholder="Agent Name" class="form-control" formControlName="name">
           <ng-container *ngFor="let validation of validationMessages.name">
             <mat-error *ngIf="exampleForm.get('name').hasError(validation.type) && (exampleForm.get('name').dirty 
-              || exampleForm.get('name').touched)">{{validation.message}}</mat-error>
+              || exampleForm.get('name').touched)">{{ validation.message }}</mat-error>
           </ng-container>
       </mat-form-field>
     </mat-card-content>
