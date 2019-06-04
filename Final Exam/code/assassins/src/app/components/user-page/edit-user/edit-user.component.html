@@ -1,0 +1,42 @@
+<div *ngIf="!loading">
+
+  <div fxLayout="column" fxLayoutAlign="center center" *ngIf="editMode">
+    <mat-card class="example-card">
+      <mat-card-content>
+        <mat-form-field class="edit-form" [formGroup]="exampleForm" novalidate>
+          <input matInput placeholder="Agent Name" class="form-control" formControlName="name">
+          <ng-container *ngFor="let validation of validationMessages.name">
+            <mat-error *ngIf="exampleForm.get('name').hasError(validation.type) && (exampleForm.get('name').dirty 
+              || exampleForm.get('name').touched)">{{ validation.message }}</mat-error>
+          </ng-container>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button class="submit-button" style="background: rgb(71, 95, 107); color: rgb(255, 255, 255);" type="submit" [disabled]="!exampleForm.valid" (click)="onSubmit(exampleForm.value)">Save Changes</button>
+        <button mat-raised-button *ngIf="isMod" style="background: rgb(71, 95, 107); color: rgb(255, 255, 255);" routerLink="/user">Cancel</button>
+    </mat-card-actions>
+    <mat-card-actions>
+      <button mat-button routerLink="/home-page">Return to Homepage</button>
+      <button mat-button (click)="toggleEdit()">Go to Display mode</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+  <div fxLayout="column" fxLayoutAlign="center center" *ngIf="!editMode">
+    <mat-card class="example-card">
+      <mat-card-content>
+        <div style="text-align: center;">
+          User Information:
+        </div><br />
+        Username: {{ getUserName() }}<br />
+        Email Address: {{ getUserEmailByUID() }}<br />
+        Target: {{ getTargetName() }}<br />
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button routerLink="/home-page">Return to Homepage</button>
+        <button mat-button (click)="toggleEdit()">Go to Edit Mode</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+</div>

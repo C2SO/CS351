@@ -11,7 +11,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent {
 
   loginForm: FormGroup;
-  errorMessage: string = '';
+  errorMessage = '';
 
   constructor(
     public authService: AuthService,
@@ -31,10 +31,11 @@ export class LoginComponent {
   tryLogin(value) {
     this.authService.doLogin(value)
       .then(res => {
+        this.errorMessage = '';
         this.router.navigate(['/home-page']);
       }, err => {
         console.log(err);
         this.errorMessage = err.message;
-      })
+      });
   }
 }

@@ -1,0 +1,26 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+  <mat-card class="example-card">
+    <mat-card-content>
+        Search users by name:<br /><br />
+      <input matInput type="text" class="form-control" [(ngModel)]="searchValue" [ngModelOptions]="{standalone: true}" placeholder="Search by name..." (keyup)="searchByName()">
+    </mat-card-content>
+    <mat-nav-list class="app-class" style="background: rgb(71, 95, 107); color: rgb(255, 255, 255);">
+      <mat-list-item *ngFor="let item of items">
+        <br />
+        Display Name:  {{ item.payload.doc.data().name }}<br />
+        User's Email:  {{ item.payload.doc.data().email }}<br />
+        Target: {{ getTargetName(item.payload.doc.data().target) }}<br />
+        <br />
+        <button mat-button class="btn btn-outline-primary action" (click)="viewDetails(item)" type="button">Details</button>
+        <button mat-button *ngIf="item.payload.doc.data().target !== ''" (click)="targetEliminated(item)" type="button">Target Eliminated</button>
+        <br />
+      </mat-list-item>
+    </mat-nav-list>
+    <p *ngIf="getWinner() !== ''">
+      Winner of the round of Assassin: {{ getUserName(getWinner()) }}
+    </p>
+    <mat-card-actions>
+      <button mat-button routerLink="/home-page">Return to Homepage</button>
+    </mat-card-actions>
+    </mat-card>
+</div>
