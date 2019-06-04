@@ -19,7 +19,7 @@ export class ModGuard implements CanActivate {
     return new Promise((resolve, reject) => {
       this.userService.getCurrentUser()
       .then(user => {
-        if (this.userService.getCurrentUserId() === this.userService.getModId()){
+        if (this.userService.getCurrentUserId() === this.userService.getModId()) {
           return resolve(true);
         }
         return resolve(false);

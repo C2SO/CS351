@@ -8,7 +8,7 @@ export class UserService {
   constructor(public db: AngularFirestore) { }
 
   private currId = '';
-  private modId  ='AIbu188nvXhYiTz8QwLBgYo7yWO2';
+  private modId  = 'AIbu188nvXhYiTz8QwLBgYo7yWO2';
   private winner = '';
 
   getCurrentUser() {
