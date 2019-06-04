@@ -17,8 +17,12 @@ export class FirebaseService {
     private userService: UserService) {
   }
 
-  getUser(userKey) {
+  getUserResolver(userKey) {
     return this.dbCol.doc(userKey).snapshotChanges();
+  }
+
+  getUserDoc(userKey) {
+    return this.dbCol.doc(userKey);
   }
 
   updateUser(userKey, value) {
