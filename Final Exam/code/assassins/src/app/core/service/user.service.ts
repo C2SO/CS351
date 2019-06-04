@@ -8,6 +8,8 @@ export class UserService {
   constructor(public db: AngularFirestore) { }
 
   private currId = '';
+  private modId  = 'AIbu188nvXhYiTz8QwLBgYo7yWO2';
+  private winner = '';
 
   getCurrentUser() {
     return new Promise<any>((resolve, reject) => {
@@ -26,8 +28,20 @@ export class UserService {
     return this.currId;
   }
 
+  getModId() {
+    return this.modId;
+  }
+
   setCurrentUserId(value) {
     this.currId = value;
+  }
+
+  setWinner(value) {
+    this.winner = value;
+  }
+
+  getWinner() {
+    return this.winner;
   }
 
   initCurrentUserId() {

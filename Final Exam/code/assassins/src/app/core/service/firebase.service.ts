@@ -80,6 +80,7 @@ export class FirebaseService {
         const targetObject = target.data();
         if (value === targetObject.target) {
           this.setTarget(value, '');
+          this.userService.setWinner(value);
         } else {
           this.setTarget(value, targetObject.target);
         }

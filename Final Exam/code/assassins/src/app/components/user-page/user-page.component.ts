@@ -26,8 +26,9 @@ export class UserPageComponent implements OnInit {
 
   ngOnInit() {
     this.getData();
+    this.userService.setWinner('');
     this.currId = this.userService.getCurrentUserId();
-    if (this.currId !== 'AIbu188nvXhYiTz8QwLBgYo7yWO2') {
+    if (this.currId !== this.userService.getModId()) {
       this.router.navigate(['user/' + this.currId]);
     }
   }
@@ -69,4 +70,11 @@ export class UserPageComponent implements OnInit {
     }
   }
 
+  getUserName(value) {
+    for (let i = 0; i < this.items.length; i++) {
+      if (this.items[i].payload.doc.id === value) {
+        return this.items[i].payload.doc.data().name;
+      }
+    }
+  }
 }

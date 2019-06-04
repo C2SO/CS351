@@ -7,7 +7,7 @@
     </mat-card-content>
     <mat-selection-list #users [(ngModel)]="selectedOptions">
       <mat-list-option *ngFor="let item of items" [value]="item.payload.doc.id" [disabled]="item.payload.doc.data().target !== ''">
-        {{item.payload.doc.data().name}}
+        {{ item.payload.doc.data().name }}
       </mat-list-option>
     </mat-selection-list>
     <mat-card-actions>

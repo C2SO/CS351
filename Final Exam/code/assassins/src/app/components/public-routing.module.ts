@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AuthGuard } from '../core/guard/auth.guard';
+import { ModGuard } from '../core/guard/mod.guard';
 import { EditUserResolver } from '../core/resolver/edit-user.resolver';
 import { UserResolver } from '../core/resolver/user.resolver';
 
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'home-page', component: HomePageComponent},
   { path: 'user', component: UserPageComponent, resolve: { data: UserResolver }},
   { path: 'user/:id', component: EditUserComponent, resolve: {data : EditUserResolver} },
-  { path: 'manage-rounds', component: ManageRoundsComponent, resolve: { data: UserResolver}}
+  { path: 'manage-rounds', component: ManageRoundsComponent, resolve: { data: UserResolver}},
+  { path: '**', redirectTo: 'home-page', pathMatch: 'full' } // keep this on the bottom of the list
 ];
 // add 'resolve: { data: UserResolver}' to a route to make that page reguire a user to be logged in
 

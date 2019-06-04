@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AuthGuard } from '../core/guard/auth.guard';
+import { ModGuard } from '../core/guard/mod.guard';
 import { AuthService } from '../core/service/authentication.service';
 import { EditUserResolver } from '../core/resolver/edit-user.resolver';
 import { PublicRoutingModule } from './public-routing.module';
@@ -43,6 +44,7 @@ import { ManageRoundsComponent } from './manage-rounds/manage-rounds.component';
   ],
   providers: [
     AuthGuard,
+    ModGuard,
     UserService,
     AuthService,
     UserResolver,
