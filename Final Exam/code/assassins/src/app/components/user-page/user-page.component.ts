@@ -77,4 +77,8 @@ export class UserPageComponent implements OnInit {
       }
     }
   }
+
+  getWinner() {
+    return this.userService.getWinner();
+  }
 }

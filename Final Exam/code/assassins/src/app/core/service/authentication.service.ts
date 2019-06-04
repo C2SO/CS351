@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
 import { UserService } from './user.service';
+import { Router } from '@angular/router';
+
 @Injectable()
 export class AuthService {
 
@@ -9,7 +11,8 @@ export class AuthService {
 
   constructor(
     public afAuth: AngularFireAuth,
-    private userService: UserService
+    private userService: UserService,
+    private router: Router
   ) {
     this.loggedIn = !!sessionStorage.getItem('user');
   }
@@ -54,6 +57,7 @@ export class AuthService {
     return new Promise((resolve, reject) => {
       if (firebase.auth().currentUser) {
         this.afAuth.auth.signOut();
+        this.router.navigate(['/login']);
         this.userService.setCurrentUserId('');
         resolve();
       } else {
