@@ -15,7 +15,7 @@
           <mat-error *ngIf="errorMessage !== ''">{{ errorMessage }}</mat-error>
         </div>
       </mat-card-content>
-      <mat-card-actions class="login-actions" fxLayout="row" fxLayoutAlign="space-evenly center">
+      <mat-card-actions class="aligncenter">
         <button mat-button type="submit" (click)="tryLogin(loginForm.value)">Login</button>
         <button mat-button routerLink="/register">Need an Account?</button>
         <button mat-button routerLink="/home-page">Return to Homepage</button>
