@@ -58,6 +58,18 @@ export class UserPageComponent implements OnInit {
     this.firebaseService.targetEliminated(item.payload.doc.id);
   }
 
+  getTargetName(value) {
+    if (value === '') {
+      return 'No Target';
+    } else {
+      for (let i = 0; i < this.items.length; i++) {
+        if (this.items[i].payload.doc.id === value) {
+          return this.items[i].payload.doc.data().name;
+        }
+      }
+    }
+  }
+
   getUserName(value) {
     for (let i = 0; i < this.items.length; i++) {
       if (this.items[i].payload.doc.id === value) {

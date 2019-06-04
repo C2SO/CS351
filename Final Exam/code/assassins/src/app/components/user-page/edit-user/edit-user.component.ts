@@ -24,6 +24,8 @@ export class EditUserComponent implements OnInit {
   };
 
   currId = '';
+  items: Array<any>;
+  loading = true;
   isMod = false;
 
   constructor(
@@ -39,8 +41,10 @@ export class EditUserComponent implements OnInit {
     if (this.userService.getCurrentUserId() === this.userService.getModId()) {
       this.isMod = true;
     }
+    this.loading = true;
     this.route.data.subscribe(routeData => {
       const data = routeData.data;
+      this.getData();
       this.currId = this.userService.getCurrentUserId();
       if (this.currId === this.userService.getModId()) {
         this.router.navigate(['user/' + this.route.snapshot.data.data.payload.id]);
@@ -53,6 +57,14 @@ export class EditUserComponent implements OnInit {
         this.createForm();
       }
     });
+  }
+
+  getData() {
+    this.firebaseService.getUsers()
+      .subscribe(result => {
+        this.items = result;
+        this.loading = false;
+      });
   }
 
   createForm() {
@@ -84,6 +96,19 @@ export class EditUserComponent implements OnInit {
 
   getUserEmailByUID() {
     return this.item.email;
+  }
+
+  getTargetName() {
+    const value = this.item.target;
+    if (value === '') {
+      return 'No Target';
+    } else {
+      for (let i = 0; i < this.items.length; i++) {
+        if (this.items[i].payload.doc.id === value) {
+          return this.items[i].payload.doc.data().name;
+        }
+      }
+    }
   }
 
 

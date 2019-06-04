@@ -9,8 +9,7 @@
         <br />
         Display Name:  {{ item.payload.doc.data().name }}<br />
         User's Email:  {{ item.payload.doc.data().email }}<br />
-        User's UID:  {{ item.payload.doc.id }}<br />
-        Target:  N/A<br />
+        Target: {{ getTargetName(item.payload.doc.data().target) }}<br />
         <br />
         <button mat-button class="btn btn-outline-primary action" (click)="viewDetails(item)" type="button">Details</button>
         <button mat-button *ngIf="item.payload.doc.data().target !== ''" (click)="targetEliminated(item)" type="button">Target Eliminated</button>
