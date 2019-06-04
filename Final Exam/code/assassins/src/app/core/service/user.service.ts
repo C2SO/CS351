@@ -9,6 +9,7 @@ export class UserService {
 
   private currId = '';
   private modId  ='AIbu188nvXhYiTz8QwLBgYo7yWO2';
+  private winner = '';
 
   getCurrentUser() {
     return new Promise<any>((resolve, reject) => {
@@ -33,6 +34,14 @@ export class UserService {
 
   setCurrentUserId(value) {
     this.currId = value;
+  }
+
+  setWinner(value) {
+    this.winner = value;
+  }
+
+  getWinner() {
+    return this.winner;
   }
 
   initCurrentUserId() {

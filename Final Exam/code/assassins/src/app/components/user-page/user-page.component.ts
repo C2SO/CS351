@@ -26,6 +26,7 @@ export class UserPageComponent implements OnInit {
 
   ngOnInit() {
     this.getData();
+    this.userService.setWinner('');
     this.currId = this.userService.getCurrentUserId();
     if (this.currId !== this.userService.getModId()) {
       this.router.navigate(['user/' + this.currId]);
@@ -57,4 +58,11 @@ export class UserPageComponent implements OnInit {
     this.firebaseService.targetEliminated(item.payload.doc.id);
   }
 
+  getUserName(value) {
+    for (let i = 0; i < this.items.length; i++) {
+      if (this.items[i].payload.doc.id === value) {
+        return this.items[i].payload.doc.data().name;
+      }
+    }
+  }
 }
